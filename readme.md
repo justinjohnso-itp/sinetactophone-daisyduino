@@ -106,6 +106,54 @@ After uploading, the Daisy Seed should reset and start running your program. You
 1. Opening the Serial Monitor in PlatformIO (baud rate: 9600)
 2. Looking for the "Serial initialized" and "Hello, Daisy Seed!" messages
 
+### 8. Simple Oscillator Example
+
+To further explore the capabilities of the Daisy Seed, you can create a simple oscillator. Create a new file `src/SimpleOscillator.ino` with the following code:
+
+```cpp
+#include "DaisyDuino.h"
+
+DaisyHardware hw;
+Oscillator osc;
+
+void setup() {
+  float sample_rate;
+
+  // Initialize hardware
+  hw = DAISY.init(DAISY_SEED, AUDIO_SR_48K);
+  sample_rate = DAISY.get_samplerate();
+
+  // Initialize oscillator
+  osc.Init(sample_rate);
+  osc.SetWaveform(Oscillator::WAVE_SIN);
+  osc.SetFreq(440);
+
+  // Start audio
+  DAISY.start();
+}
+
+void loop() {
+  // Nothing to do here, everything is handled in the audio callback
+}
+
+void audioCallback(float *in, float *out, size_t size) {
+  for (size_t i = 0; i < size; i += 2) {
+    float sig = osc.Process();
+    out[i] = sig;     // left channel
+    out[i + 1] = sig; // right channel
+  }
+}
+```
+
+### 9. Uploading the Simple Oscillator
+
+1. Connect your Daisy Seed to your computer via USB
+2. Put the Daisy Seed in bootloader mode:
+   - Press and hold the BOOT button
+   - Press and release the RESET button
+   - Release the BOOT button
+3. Click the upload button in PlatformIO
+
 ## Troubleshooting
 
 - If upload fails, ensure your Daisy Seed is in bootloader mode
