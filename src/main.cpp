@@ -1,3 +1,5 @@
+// "ChordMachine" example: https://github.com/electro-smith/DaisyDuino/blob/master/examples/Pod/ChordMachine/ChordMachine.ino
+
 // Knob 1 = frequency
 // Knob 2 = inversion
 //Encoder turn = chord
