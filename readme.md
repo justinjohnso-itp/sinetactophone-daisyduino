@@ -20,7 +20,7 @@ Install the PlatformIO extension from the VSCode marketplace. This provides an i
 
 Create a new PlatformIO project with the following settings:
 - Name: DaisyTest (or whatever you want)
-- Board: ST STM32“F0308DISCOVERY
+- Board: ST STM32F0308DISCOVERY
 - Framework: Arduino
 
 ### 3. Configure platformio.ini
