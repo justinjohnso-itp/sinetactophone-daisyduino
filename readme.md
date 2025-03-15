@@ -145,15 +145,6 @@ void audioCallback(float *in, float *out, size_t size) {
 }
 ```
 
-### 9. Uploading the Simple Oscillator
-
-1. Connect your Daisy Seed to your computer via USB
-2. Put the Daisy Seed in bootloader mode:
-   - Press and hold the BOOT button
-   - Press and release the RESET button
-   - Release the BOOT button
-3. Click the upload button in PlatformIO
-
 ## Troubleshooting
 
 - If upload fails, ensure your Daisy Seed is in bootloader mode
