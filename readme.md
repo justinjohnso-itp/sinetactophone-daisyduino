@@ -93,6 +93,11 @@ void loop() {
    - Press and release the RESET button
    - Release the BOOT button
 3. Click the upload button in PlatformIO
+Don’t worry about these “errors”
+```
+dfu-util: Error during download get_status
+*** [upload] Error 74
+```
 
 ### 7. Testing the Setup
 
