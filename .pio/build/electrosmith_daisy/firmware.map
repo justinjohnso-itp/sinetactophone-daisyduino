@@ -5339,7 +5339,7 @@ Linker script and memory map
                 0x08000000                g_pfnVectors
                 0x08000298                        . = ALIGN (0x4)
 
-.text           0x08000298    0x114b8
+.text           0x08000298    0x11388
                 0x08000298                        . = ALIGN (0x4)
  *(.text)
  .text          0x08000298       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
@@ -6574,942 +6574,927 @@ Linker script and memory map
                 0x0800bca0                _kill
  .text._getpid  0x0800bcb0        0x4 .pio/build/electrosmith_daisy/SrcWrapper/src/syscalls.c.o
                 0x0800bcb0                _getpid
- .text._Z9InitSynthf
-                0x0800bcb4       0x8c .pio/build/electrosmith_daisy/src/main.cpp.o
-                0x0800bcb4                InitSynth(float)
- .text._Z10InitChordsv
-                0x0800bd40       0x58 .pio/build/electrosmith_daisy/src/main.cpp.o
-                0x0800bd40                InitChords()
- .text.setup    0x0800bd98       0x4c .pio/build/electrosmith_daisy/src/main.cpp.o
-                0x0800bd98                setup
- .text.loop     0x0800bde4        0x2 .pio/build/electrosmith_daisy/src/main.cpp.o
-                0x0800bde4                loop
- *fill*         0x0800bde6        0x2 
- .text._Z13UpdateEncoderv
-                0x0800bde8       0x38 .pio/build/electrosmith_daisy/src/main.cpp.o
-                0x0800bde8                UpdateEncoder()
- .text._Z11UpdateKnobsv
-                0x0800be20       0xac .pio/build/electrosmith_daisy/src/main.cpp.o
-                0x0800be20                UpdateKnobs()
- .text._Z10UpdateLedsv
-                0x0800becc       0x38 .pio/build/electrosmith_daisy/src/main.cpp.o
-                0x0800becc                UpdateLeds()
- .text._Z14UpdateControlsv
-                0x0800bf04       0x1c .pio/build/electrosmith_daisy/src/main.cpp.o
-                0x0800bf04                UpdateControls()
  .text._ZL13AudioCallbackPPfS0_j
-                0x0800bf20       0xbc .pio/build/electrosmith_daisy/src/main.cpp.o
+                0x0800bcb4      0x120 .pio/build/electrosmith_daisy/src/main.cpp.o
+ .text._Z9InitSynthf
+                0x0800bdd4       0x60 .pio/build/electrosmith_daisy/src/main.cpp.o
+                0x0800bdd4                InitSynth(float)
+ .text.setup    0x0800be34       0x74 .pio/build/electrosmith_daisy/src/main.cpp.o
+                0x0800be34                setup
+ .text.loop     0x0800bea8        0x2 .pio/build/electrosmith_daisy/src/main.cpp.o
+                0x0800bea8                loop
+ *fill*         0x0800beaa        0x2 
  .text.startup._GLOBAL__sub_I_hw
-                0x0800bfdc       0x80 .pio/build/electrosmith_daisy/src/main.cpp.o
+                0x0800beac       0x80 .pio/build/electrosmith_daisy/src/main.cpp.o
  .text._ZN10AudioClass14ConfigureSdramEv
-                0x0800c05c       0x10 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
-                0x0800c05c                AudioClass::ConfigureSdram()
+                0x0800bf2c       0x10 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+                0x0800bf2c                AudioClass::ConfigureSdram()
  .text._ZN10AudioClass5beginEPFvPPfS1_jE
-                0x0800c06c        0x6 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
-                0x0800c06c                AudioClass::begin(void (*)(float**, float**, unsigned int))
+                0x0800bf3c        0x6 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+                0x0800bf3c                AudioClass::begin(void (*)(float**, float**, unsigned int))
  .text._ZN10AudioClass14get_samplerateEv
-                0x0800c072        0x6 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
-                0x0800c072                AudioClass::get_samplerate()
+                0x0800bf42        0x6 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+                0x0800bf42                AudioClass::get_samplerate()
  .text._ZN10AudioClass14AudioBlockSizeEv
-                0x0800c078       0x1a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
-                0x0800c078                AudioClass::AudioBlockSize()
+                0x0800bf48       0x1a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+                0x0800bf48                AudioClass::AudioBlockSize()
  .text._ZN10AudioClass17BoardVersionCheckEv
-                0x0800c092       0x18 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
-                0x0800c092                AudioClass::BoardVersionCheck()
- *fill*         0x0800c0aa        0x2 
+                0x0800bf62       0x18 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+                0x0800bf62                AudioClass::BoardVersionCheck()
+ *fill*         0x0800bf7a        0x2 
  .text._ZN10AudioClass4initE16DaisyDuinoDevice20DaisyDuinoSampleRate
-                0x0800c0ac      0x1bc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
-                0x0800c0ac                AudioClass::init(DaisyDuinoDevice, DaisyDuinoSampleRate)
+                0x0800bf7c      0x1bc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+                0x0800bf7c                AudioClass::init(DaisyDuinoDevice, DaisyDuinoSampleRate)
  .text.startup._GLOBAL__sub_I_PinMap_I2C_SDA
-                0x0800c268       0x4c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+                0x0800c138       0x4c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
  .text.exit._GLOBAL__sub_D_PinMap_I2C_SDA
-                0x0800c2b4        0xc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+                0x0800c184        0xc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
  .text._ZN13DaisyHardware7InitPodEf
-                0x0800c2c0       0xb0 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c2c0                DaisyHardware::InitPod(float)
+                0x0800c190       0xb0 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c190                DaisyHardware::InitPod(float)
  .text._ZN13DaisyHardware9InitPatchEf
-                0x0800c370       0xd8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c370                DaisyHardware::InitPatch(float)
+                0x0800c240       0xd8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c240                DaisyHardware::InitPatch(float)
  .text._ZN5daisy16LedDriverPca9685ILi2ELb1EE4InitERA2_KhPNS1_21PCA9685TransmitBufferES6_m
-                0x0800c448       0x88 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c448                daisy::LedDriverPca9685<2, true>::Init(unsigned char const (&) [2], daisy::LedDriverPca9685<2, true>::PCA9685TransmitBuffer*, daisy::LedDriverPca9685<2, true>::PCA9685TransmitBuffer*, unsigned long)
+                0x0800c318       0x88 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c318                daisy::LedDriverPca9685<2, true>::Init(unsigned char const (&) [2], daisy::LedDriverPca9685<2, true>::PCA9685TransmitBuffer*, daisy::LedDriverPca9685<2, true>::PCA9685TransmitBuffer*, unsigned long)
  .text._ZN5daisy17ShiftRegister4021ILj2ELj1EE6UpdateEv
-                0x0800c4d0       0x98 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c4d0                daisy::ShiftRegister4021<2u, 1u>::Update()
+                0x0800c3a0       0x98 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c3a0                daisy::ShiftRegister4021<2u, 1u>::Update()
  .text._ZN13DaisyHardware22ProcessDigitalControlsEv
-                0x0800c568       0x90 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c568                DaisyHardware::ProcessDigitalControls()
+                0x0800c438       0x90 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c438                DaisyHardware::ProcessDigitalControls()
  .text._ZN5daisy16LedDriverPca9685ILi2ELb1EE6SetLedEif
-                0x0800c5f8       0x7c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c5f8                daisy::LedDriverPca9685<2, true>::SetLed(int, float)
+                0x0800c4c8       0x7c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c4c8                daisy::LedDriverPca9685<2, true>::SetLed(int, float)
  .text._ZN13DaisyHardware10SetRingLedEhfff
-                0x0800c674       0x80 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c674                DaisyHardware::SetRingLed(unsigned char, float, float, float)
+                0x0800c544       0x80 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c544                DaisyHardware::SetRingLed(unsigned char, float, float, float)
  .text._ZN13DaisyHardware16SetFootswitchLedEhf
-                0x0800c6f4       0x30 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c6f4                DaisyHardware::SetFootswitchLed(unsigned char, float)
+                0x0800c5c4       0x30 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c5c4                DaisyHardware::SetFootswitchLed(unsigned char, float)
  .text._ZN13DaisyHardware14SetKeyboardLedEhhf
-                0x0800c724       0x28 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c724                DaisyHardware::SetKeyboardLed(unsigned char, unsigned char, float)
+                0x0800c5f4       0x28 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c5f4                DaisyHardware::SetKeyboardLed(unsigned char, unsigned char, float)
  .text._ZN13DaisyHardware10SetKnobLedEhf
-                0x0800c74c       0x1c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c74c                DaisyHardware::SetKnobLed(unsigned char, float)
+                0x0800c61c       0x1c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c61c                DaisyHardware::SetKnobLed(unsigned char, float)
  .text._ZN13DaisyHardware9ClearLedsEv
-                0x0800c768       0x90 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c768                DaisyHardware::ClearLeds()
+                0x0800c638       0x90 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c638                DaisyHardware::ClearLeds()
  .text._ZN5daisy16LedDriverPca9685ILi2ELb1EE22SwapBuffersAndTransmitEv
-                0x0800c7f8       0x96 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c7f8                daisy::LedDriverPca9685<2, true>::SwapBuffersAndTransmit()
+                0x0800c6c8       0x96 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c6c8                daisy::LedDriverPca9685<2, true>::SwapBuffersAndTransmit()
  .text._ZN13DaisyHardware10UpdateLedsEv
-                0x0800c88e       0x18 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c88e                DaisyHardware::UpdateLeds()
- *fill*         0x0800c8a6        0x2 
+                0x0800c75e       0x18 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c75e                DaisyHardware::UpdateLeds()
+ *fill*         0x0800c776        0x2 
  .text._ZN13DaisyHardware9InitPetalEf
-                0x0800c8a8      0x198 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800c8a8                DaisyHardware::InitPetal(float)
+                0x0800c778      0x198 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c778                DaisyHardware::InitPetal(float)
  .text._ZN13DaisyHardware9InitFieldEf
-                0x0800ca40      0x128 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800ca40                DaisyHardware::InitField(float)
+                0x0800c910      0x128 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800c910                DaisyHardware::InitField(float)
  .text._ZN13DaisyHardware4InitEf16DaisyDuinoDevice
-                0x0800cb68       0x3c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
-                0x0800cb68                DaisyHardware::Init(float, DaisyDuinoDevice)
+                0x0800ca38       0x3c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800ca38                DaisyHardware::Init(float, DaisyDuinoDevice)
  .text.startup._GLOBAL__sub_I__ZN13DaisyHardware4InitEf16DaisyDuinoDevice
-                0x0800cba4       0x34 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x0800ca74       0x34 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
  .text._ZL8Polyblepff
-                0x0800cbd8       0x64 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(oscillator.cpp.o)
+                0x0800caa8       0x64 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(oscillator.cpp.o)
  .text._ZN7daisysp10Oscillator7ProcessEv
-                0x0800cc3c      0x1e8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(oscillator.cpp.o)
-                0x0800cc3c                daisysp::Oscillator::Process()
+                0x0800cb0c      0x1e8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(oscillator.cpp.o)
+                0x0800cb0c                daisysp::Oscillator::Process()
  .text._ZN7daisysp10Oscillator12CalcPhaseIncEf
-                0x0800ce24       0x18 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(oscillator.cpp.o)
-                0x0800ce24                daisysp::Oscillator::CalcPhaseInc(float)
+                0x0800ccf4       0x18 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(oscillator.cpp.o)
+                0x0800ccf4                daisysp::Oscillator::CalcPhaseInc(float)
  .text._ZNK5daisy11AudioHandle4Impl11GetChannelsEv
-                0x0800ce3c       0x1a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
-                0x0800ce3c                daisy::AudioHandle::Impl::GetChannels() const
- *fill*         0x0800ce56        0x2 
+                0x0800cd0c       0x1a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
+                0x0800cd0c                daisy::AudioHandle::Impl::GetChannels() const
+ *fill*         0x0800cd26        0x2 
  .text._ZN5daisy11AudioHandle4Impl16InternalCallbackEPlS2_j
-                0x0800ce58      0x99c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
-                0x0800ce58                daisy::AudioHandle::Impl::InternalCallback(long*, long*, unsigned int)
+                0x0800cd28      0x99c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
+                0x0800cd28                daisy::AudioHandle::Impl::InternalCallback(long*, long*, unsigned int)
  .text._ZN5daisy11AudioHandle4Impl4InitENS0_6ConfigENS_9SaiHandleE
-                0x0800d7f4       0x5c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
-                0x0800d7f4                daisy::AudioHandle::Impl::Init(daisy::AudioHandle::Config, daisy::SaiHandle)
+                0x0800d6c4       0x5c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
+                0x0800d6c4                daisy::AudioHandle::Impl::Init(daisy::AudioHandle::Config, daisy::SaiHandle)
  .text._ZN5daisy11AudioHandle4Impl5StartEPFvPPfS3_jE
-                0x0800d850       0x40 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
-                0x0800d850                daisy::AudioHandle::Impl::Start(void (*)(float**, float**, unsigned int))
+                0x0800d720       0x40 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
+                0x0800d720                daisy::AudioHandle::Impl::Start(void (*)(float**, float**, unsigned int))
  .text._ZN5daisy11AudioHandle4InitERKNS0_6ConfigENS_9SaiHandleE
-                0x0800d890       0x1c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
-                0x0800d890                daisy::AudioHandle::Init(daisy::AudioHandle::Config const&, daisy::SaiHandle)
+                0x0800d760       0x1c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
+                0x0800d760                daisy::AudioHandle::Init(daisy::AudioHandle::Config const&, daisy::SaiHandle)
  .text._ZN5daisy11AudioHandle4InitERKNS0_6ConfigENS_9SaiHandleES4_
-                0x0800d8ac       0x3c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
-                0x0800d8ac                daisy::AudioHandle::Init(daisy::AudioHandle::Config const&, daisy::SaiHandle, daisy::SaiHandle)
+                0x0800d77c       0x3c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
+                0x0800d77c                daisy::AudioHandle::Init(daisy::AudioHandle::Config const&, daisy::SaiHandle, daisy::SaiHandle)
  .text._ZNK5daisy11AudioHandle9GetConfigEv
-                0x0800d8e8        0x6 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
-                0x0800d8e8                daisy::AudioHandle::GetConfig() const
+                0x0800d7b8        0x6 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
+                0x0800d7b8                daisy::AudioHandle::GetConfig() const
  .text._ZN5daisy11AudioHandle13GetSampleRateEv
-                0x0800d8ee        0x8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
-                0x0800d8ee                daisy::AudioHandle::GetSampleRate()
+                0x0800d7be        0x8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
+                0x0800d7be                daisy::AudioHandle::GetSampleRate()
  .text._ZN5daisy11AudioHandle5StartEPFvPPfS2_jE
-                0x0800d8f6        0x6 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
-                0x0800d8f6                daisy::AudioHandle::Start(void (*)(float**, float**, unsigned int))
+                0x0800d7c6        0x6 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
+                0x0800d7c6                daisy::AudioHandle::Start(void (*)(float**, float**, unsigned int))
  .text.startup._GLOBAL__sub_I__ZN5daisy11AudioHandle4Impl4InitENS0_6ConfigENS_9SaiHandleE
-                0x0800d8fc       0x10 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
+                0x0800d7cc       0x10 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
  .text._ZN5daisy6Ak45564InitE12dsy_gpio_pin
-                0x0800d90c       0x3a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(codec_ak4556.cpp.o)
-                0x0800d90c                daisy::Ak4556::Init(dsy_gpio_pin)
+                0x0800d7dc       0x3a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(codec_ak4556.cpp.o)
+                0x0800d7dc                daisy::Ak4556::Init(dsy_gpio_pin)
  .text._ZN5daisy7Pcm306013WriteRegisterEhh
-                0x0800d946       0x30 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(codec_pcm3060.cpp.o)
-                0x0800d946                daisy::Pcm3060::WriteRegister(unsigned char, unsigned char)
- *fill*         0x0800d976        0x2 
+                0x0800d816       0x30 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(codec_pcm3060.cpp.o)
+                0x0800d816                daisy::Pcm3060::WriteRegister(unsigned char, unsigned char)
+ *fill*         0x0800d846        0x2 
  .text._ZN5daisy7Pcm306012ReadRegisterEhPh
-                0x0800d978       0x40 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(codec_pcm3060.cpp.o)
-                0x0800d978                daisy::Pcm3060::ReadRegister(unsigned char, unsigned char*)
+                0x0800d848       0x40 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(codec_pcm3060.cpp.o)
+                0x0800d848                daisy::Pcm3060::ReadRegister(unsigned char, unsigned char*)
  .text._ZN5daisy7Pcm30604InitEP7TwoWire
-                0x0800d9b8      0x100 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(codec_pcm3060.cpp.o)
-                0x0800d9b8                daisy::Pcm3060::Init(TwoWire*)
+                0x0800d888      0x100 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(codec_pcm3060.cpp.o)
+                0x0800d888                daisy::Pcm3060::Init(TwoWire*)
  .text._ZN5daisy6Wm873120WriteControlRegisterEht
-                0x0800dab8       0x3c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(codec_wm8731.cpp.o)
-                0x0800dab8                daisy::Wm8731::WriteControlRegister(unsigned char, unsigned short)
+                0x0800d988       0x3c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(codec_wm8731.cpp.o)
+                0x0800d988                daisy::Wm8731::WriteControlRegister(unsigned char, unsigned short)
  .text._ZN5daisy6Wm87314InitERKNS0_6ConfigEP7TwoWire
-                0x0800daf4      0x104 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(codec_wm8731.cpp.o)
-                0x0800daf4                daisy::Wm8731::Init(daisy::Wm8731::Config const&, TwoWire*)
+                0x0800d9c4      0x104 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(codec_wm8731.cpp.o)
+                0x0800d9c4                daisy::Wm8731::Init(daisy::Wm8731::Config const&, TwoWire*)
  .text._ZN5daisy13AnalogControl4InitEhfbbf
-                0x0800dbf8       0x50 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(ctrl.cpp.o)
-                0x0800dbf8                daisy::AnalogControl::Init(unsigned char, float, bool, bool, float)
+                0x0800dac8       0x50 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(ctrl.cpp.o)
+                0x0800dac8                daisy::AnalogControl::Init(unsigned char, float, bool, bool, float)
  .text._ZN5daisy13AnalogControl13InitBipolarCvEhf
-                0x0800dc48       0x58 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(ctrl.cpp.o)
-                0x0800dc48                daisy::AnalogControl::InitBipolarCv(unsigned char, float)
+                0x0800db18       0x58 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(ctrl.cpp.o)
+                0x0800db18                daisy::AnalogControl::InitBipolarCv(unsigned char, float)
  .text.dsy_dma_init
-                0x0800dca0       0x98 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(dma.c.o)
-                0x0800dca0                dsy_dma_init
+                0x0800db70       0x98 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(dma.c.o)
+                0x0800db70                dsy_dma_init
  .text._ZN5daisy7Encoder4InitEfhhhhhh
-                0x0800dd38       0x52 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(encoder.cpp.o)
-                0x0800dd38                daisy::Encoder::Init(float, unsigned char, unsigned char, unsigned char, unsigned char, unsigned char, unsigned char)
+                0x0800dc08       0x52 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(encoder.cpp.o)
+                0x0800dc08                daisy::Encoder::Init(float, unsigned char, unsigned char, unsigned char, unsigned char, unsigned char, unsigned char)
  .text._ZN5daisy7Encoder8DebounceEv
-                0x0800dd8a       0x5c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(encoder.cpp.o)
-                0x0800dd8a                daisy::Encoder::Debounce()
- *fill*         0x0800dde6        0x2 
+                0x0800dc5a       0x5c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(encoder.cpp.o)
+                0x0800dc5a                daisy::Encoder::Debounce()
+ *fill*         0x0800dcb6        0x2 
  .text.dsy_gpio_init
-                0x0800dde8      0x160 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(gpio.c.o)
-                0x0800dde8                dsy_gpio_init
+                0x0800dcb8      0x160 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(gpio.c.o)
+                0x0800dcb8                dsy_gpio_init
  .text.dsy_gpio_write
-                0x0800df48       0x24 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(gpio.c.o)
-                0x0800df48                dsy_gpio_write
+                0x0800de18       0x24 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(gpio.c.o)
+                0x0800de18                dsy_gpio_write
  .text.dsy_hal_map_get_port
-                0x0800df6c       0x10 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(hal_map.c.o)
-                0x0800df6c                dsy_hal_map_get_port
+                0x0800de3c       0x10 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(hal_map.c.o)
+                0x0800de3c                dsy_hal_map_get_port
  .text.dsy_hal_map_get_pin
-                0x0800df7c       0x10 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(hal_map.c.o)
-                0x0800df7c                dsy_hal_map_get_pin
+                0x0800de4c       0x10 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(hal_map.c.o)
+                0x0800de4c                dsy_hal_map_get_pin
  .text._ZN5daisy3Led4InitEhhhb
-                0x0800df8c       0x30 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(led.cpp.o)
-                0x0800df8c                daisy::Led::Init(unsigned char, unsigned char, unsigned char, bool)
+                0x0800de5c       0x30 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(led.cpp.o)
+                0x0800de5c                daisy::Led::Init(unsigned char, unsigned char, unsigned char, bool)
  .text._ZN5daisy3Led3SetEbbb
-                0x0800dfbc       0x2a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(led.cpp.o)
-                0x0800dfbc                daisy::Led::Set(bool, bool, bool)
+                0x0800de8c       0x2a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(led.cpp.o)
+                0x0800de8c                daisy::Led::Set(bool, bool, bool)
  .text._ZN7TwoWire5writeEi.isra.0
-                0x0800dfe6        0x8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
+                0x0800deb6        0x8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
  .text._ZN9myPCA96854InitEhP7TwoWire
-                0x0800dfee        0xa .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
-                0x0800dfee                myPCA9685::Init(unsigned char, TwoWire*)
+                0x0800debe        0xa .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
+                0x0800debe                myPCA9685::Init(unsigned char, TwoWire*)
  .text._ZN9myPCA968510SetAddressEh
-                0x0800dff8        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
-                0x0800dff8                myPCA9685::SetAddress(unsigned char)
+                0x0800dec8        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
+                0x0800dec8                myPCA9685::SetAddress(unsigned char)
  .text._ZN9myPCA968511isConnectedEv
-                0x0800dffc       0x1c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
-                0x0800dffc                myPCA9685::isConnected()
+                0x0800decc       0x1c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
+                0x0800decc                myPCA9685::isConnected()
  .text._ZN9myPCA96858writeRegEhh
-                0x0800e018       0x2e .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
-                0x0800e018                myPCA9685::writeReg(unsigned char, unsigned char)
+                0x0800dee8       0x2e .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
+                0x0800dee8                myPCA9685::writeReg(unsigned char, unsigned char)
  .text._ZN9myPCA96859writeModeEhh
-                0x0800e046       0x1e .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
-                0x0800e046                myPCA9685::writeMode(unsigned char, unsigned char)
+                0x0800df16       0x1e .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
+                0x0800df16                myPCA9685::writeMode(unsigned char, unsigned char)
  .text._ZN9myPCA96855resetEv
-                0x0800e064       0x1c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
-                0x0800e064                myPCA9685::reset()
+                0x0800df34       0x1c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
+                0x0800df34                myPCA9685::reset()
  .text._ZN9myPCA96855beginEv
-                0x0800e080       0x20 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
-                0x0800e080                myPCA9685::begin()
+                0x0800df50       0x20 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
+                0x0800df50                myPCA9685::begin()
  .text._ZN9myPCA96859writeReg2Ehtt
-                0x0800e0a0       0x4a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
-                0x0800e0a0                myPCA9685::writeReg2(unsigned char, unsigned short, unsigned short)
+                0x0800df70       0x4a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
+                0x0800df70                myPCA9685::writeReg2(unsigned char, unsigned short, unsigned short)
  .text._ZN9myPCA96856setPWMEhtt
-                0x0800e0ea       0x22 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
-                0x0800e0ea                myPCA9685::setPWM(unsigned char, unsigned short, unsigned short)
+                0x0800dfba       0x22 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(pca9685.cpp.o)
+                0x0800dfba                myPCA9685::setPWM(unsigned char, unsigned short, unsigned short)
  .text._ZN5daisy9SaiHandle4Impl4InitERKNS0_6ConfigE
-                0x0800e10c      0x148 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e10c                daisy::SaiHandle::Impl::Init(daisy::SaiHandle::Config const&)
+                0x0800dfdc      0x148 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800dfdc                daisy::SaiHandle::Impl::Init(daisy::SaiHandle::Config const&)
  .text._ZN5daisy9SaiHandle4Impl7InitDmaENS1_15PeripheralBlockE
-                0x0800e254       0xa0 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e254                daisy::SaiHandle::Impl::InitDma(daisy::SaiHandle::Impl::PeripheralBlock)
+                0x0800e124       0xa0 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e124                daisy::SaiHandle::Impl::InitDma(daisy::SaiHandle::Impl::PeripheralBlock)
  .text._ZN5daisy9SaiHandle4Impl16InternalCallbackEj
-                0x0800e2f4       0x2a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e2f4                daisy::SaiHandle::Impl::InternalCallback(unsigned int)
+                0x0800e1c4       0x2a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e1c4                daisy::SaiHandle::Impl::InternalCallback(unsigned int)
  .text._ZN5daisy9SaiHandle4Impl16StartDmaTransferEPlS2_jPFvS2_S2_jE
-                0x0800e31e       0x8c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e31e                daisy::SaiHandle::Impl::StartDmaTransfer(long*, long*, unsigned int, void (*)(long*, long*, unsigned int))
- *fill*         0x0800e3aa        0x2 
+                0x0800e1ee       0x8c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e1ee                daisy::SaiHandle::Impl::StartDmaTransfer(long*, long*, unsigned int, void (*)(long*, long*, unsigned int))
+ *fill*         0x0800e27a        0x2 
  .text._ZN5daisy9SaiHandle4Impl13GetSampleRateEv
-                0x0800e3ac       0x20 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e3ac                daisy::SaiHandle::Impl::GetSampleRate()
+                0x0800e27c       0x20 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e27c                daisy::SaiHandle::Impl::GetSampleRate()
  .text._ZN5daisy9SaiHandle4Impl8InitPinsEv
-                0x0800e3cc       0x9e .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e3cc                daisy::SaiHandle::Impl::InitPins()
- *fill*         0x0800e46a        0x2 
+                0x0800e29c       0x9e .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e29c                daisy::SaiHandle::Impl::InitPins()
+ *fill*         0x0800e33a        0x2 
  .text.HAL_SAI_MspInit
-                0x0800e46c      0x130 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e46c                HAL_SAI_MspInit
+                0x0800e33c      0x130 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e33c                HAL_SAI_MspInit
  .text.DMA1_Stream0_IRQHandler
-                0x0800e59c        0xc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e59c                DMA1_Stream0_IRQHandler
+                0x0800e46c        0xc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e46c                DMA1_Stream0_IRQHandler
  .text.DMA1_Stream1_IRQHandler
-                0x0800e5a8        0xc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e5a8                DMA1_Stream1_IRQHandler
+                0x0800e478        0xc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e478                DMA1_Stream1_IRQHandler
  .text.DMA1_Stream3_IRQHandler
-                0x0800e5b4        0xc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e5b4                DMA1_Stream3_IRQHandler
+                0x0800e484        0xc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e484                DMA1_Stream3_IRQHandler
  .text.DMA1_Stream4_IRQHandler
-                0x0800e5c0        0xc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e5c0                DMA1_Stream4_IRQHandler
+                0x0800e490        0xc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e490                DMA1_Stream4_IRQHandler
  .text.HAL_SAI_RxHalfCpltCallback
-                0x0800e5cc       0x44 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e5cc                HAL_SAI_RxHalfCpltCallback
+                0x0800e49c       0x44 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e49c                HAL_SAI_RxHalfCpltCallback
  .text.HAL_SAI_RxCpltCallback
-                0x0800e610       0x4c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e610                HAL_SAI_RxCpltCallback
+                0x0800e4e0       0x4c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e4e0                HAL_SAI_RxCpltCallback
  .text._ZN5daisy9SaiHandle4InitERKNS0_6ConfigE
-                0x0800e65c       0x20 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e65c                daisy::SaiHandle::Init(daisy::SaiHandle::Config const&)
+                0x0800e52c       0x20 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e52c                daisy::SaiHandle::Init(daisy::SaiHandle::Config const&)
  .text._ZNK5daisy9SaiHandle9GetConfigEv
-                0x0800e67c        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e67c                daisy::SaiHandle::GetConfig() const
+                0x0800e54c        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e54c                daisy::SaiHandle::GetConfig() const
  .text._ZN5daisy9SaiHandle8StartDmaEPlS1_jPFvS1_S1_jE
-                0x0800e680        0x6 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e680                daisy::SaiHandle::StartDma(long*, long*, unsigned int, void (*)(long*, long*, unsigned int))
+                0x0800e550        0x6 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e550                daisy::SaiHandle::StartDma(long*, long*, unsigned int, void (*)(long*, long*, unsigned int))
  .text._ZN5daisy9SaiHandle13GetSampleRateEv
-                0x0800e686        0x6 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e686                daisy::SaiHandle::GetSampleRate()
+                0x0800e556        0x6 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e556                daisy::SaiHandle::GetSampleRate()
  .text._ZNK5daisy9SaiHandle9GetOffsetEv
-                0x0800e68c        0x8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
-                0x0800e68c                daisy::SaiHandle::GetOffset() const
+                0x0800e55c        0x8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0800e55c                daisy::SaiHandle::GetOffset() const
  .text.dsy_sdram_init
-                0x0800e694       0xfc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sdram.c.o)
-                0x0800e694                dsy_sdram_init
+                0x0800e564       0xfc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sdram.c.o)
+                0x0800e564                dsy_sdram_init
  .text.HAL_SDRAM_MspInit
-                0x0800e790      0x1b8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sdram.c.o)
-                0x0800e790                HAL_SDRAM_MspInit
+                0x0800e660      0x1b8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sdram.c.o)
+                0x0800e660                HAL_SDRAM_MspInit
  .text._ZN5daisy6Switch4InitEfbhh
-                0x0800e948       0x28 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(switch.cpp.o)
-                0x0800e948                daisy::Switch::Init(float, bool, unsigned char, unsigned char)
+                0x0800e818       0x28 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(switch.cpp.o)
+                0x0800e818                daisy::Switch::Init(float, bool, unsigned char, unsigned char)
  .text._ZN5daisy6Switch8DebounceEv
-                0x0800e970       0x4a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(switch.cpp.o)
-                0x0800e970                daisy::Switch::Debounce()
- *fill*         0x0800e9ba        0x2 
+                0x0800e840       0x4a .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(switch.cpp.o)
+                0x0800e840                daisy::Switch::Debounce()
+ *fill*         0x0800e88a        0x2 
  .text.dsy_mpu_init
-                0x0800e9bc       0x58 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sys_mpu.c.o)
-                0x0800e9bc                dsy_mpu_init
+                0x0800e88c       0x58 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sys_mpu.c.o)
+                0x0800e88c                dsy_mpu_init
  .text._ZN5daisy6System5DelayEm
-                0x0800ea14        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(system.cpp.o)
-                0x0800ea14                daisy::System::Delay(unsigned long)
+                0x0800e8e4        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(system.cpp.o)
+                0x0800e8e4                daisy::System::Delay(unsigned long)
  .text.startup._GLOBAL__sub_I__ZN5daisy6System4tim_E
-                0x0800ea18        0xc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(system.cpp.o)
+                0x0800e8e8        0xc .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(system.cpp.o)
  .text.startup._Z7premainv
-                0x0800ea24       0x94 .pio/build/electrosmith_daisy/libFrameworkArduino.a(main.cpp.o)
-                0x0800ea24                premain()
+                0x0800e8f4       0x94 .pio/build/electrosmith_daisy/libFrameworkArduino.a(main.cpp.o)
+                0x0800e8f4                premain()
  .text.startup.main
-                0x0800eab8       0x14 .pio/build/electrosmith_daisy/libFrameworkArduino.a(main.cpp.o)
-                0x0800eab8                main
+                0x0800e988       0x14 .pio/build/electrosmith_daisy/libFrameworkArduino.a(main.cpp.o)
+                0x0800e988                main
  .text.Reset_Handler
-                0x0800eacc       0x50 .pio/build/electrosmith_daisy/libFrameworkArduino.a(startup_stm32yyxx.S.o)
-                0x0800eacc                Reset_Handler
+                0x0800e99c       0x50 .pio/build/electrosmith_daisy/libFrameworkArduino.a(startup_stm32yyxx.S.o)
+                0x0800e99c                Reset_Handler
  .text.Default_Handler
-                0x0800eb1c        0x2 .pio/build/electrosmith_daisy/libFrameworkArduino.a(startup_stm32yyxx.S.o)
-                0x0800eb1c                SAI1_IRQHandler
-                0x0800eb1c                HASH_RNG_IRQHandler
-                0x0800eb1c                HRTIM1_Master_IRQHandler
-                0x0800eb1c                DebugMon_Handler
-                0x0800eb1c                SPI4_IRQHandler
-                0x0800eb1c                BDMA_Channel6_IRQHandler
-                0x0800eb1c                DMA2_Stream5_IRQHandler
-                0x0800eb1c                HardFault_Handler
-                0x0800eb1c                HRTIM1_FLT_IRQHandler
-                0x0800eb1c                JPEG_IRQHandler
-                0x0800eb1c                DMA1_Stream5_IRQHandler
-                0x0800eb1c                BDMA_Channel1_IRQHandler
-                0x0800eb1c                HRTIM1_TIMD_IRQHandler
-                0x0800eb1c                TAMP_STAMP_IRQHandler
-                0x0800eb1c                PendSV_Handler
-                0x0800eb1c                NMI_Handler
-                0x0800eb1c                LPTIM4_IRQHandler
-                0x0800eb1c                LPTIM2_IRQHandler
-                0x0800eb1c                DFSDM1_FLT1_IRQHandler
-                0x0800eb1c                DMAMUX2_OVR_IRQHandler
-                0x0800eb1c                DFSDM1_FLT2_IRQHandler
-                0x0800eb1c                MDMA_IRQHandler
-                0x0800eb1c                LPTIM3_IRQHandler
-                0x0800eb1c                HSEM1_IRQHandler
-                0x0800eb1c                DMA1_Stream2_IRQHandler
-                0x0800eb1c                FPU_IRQHandler
-                0x0800eb1c                OTG_HS_WKUP_IRQHandler
-                0x0800eb1c                FDCAN1_IT1_IRQHandler
-                0x0800eb1c                UsageFault_Handler
-                0x0800eb1c                LTDC_ER_IRQHandler
-                0x0800eb1c                DMA2_Stream2_IRQHandler
-                0x0800eb1c                HRTIM1_TIME_IRQHandler
-                0x0800eb1c                SPI1_IRQHandler
-                0x0800eb1c                DCMI_IRQHandler
-                0x0800eb1c                HRTIM1_TIMC_IRQHandler
-                0x0800eb1c                DMA2_Stream3_IRQHandler
-                0x0800eb1c                SAI2_IRQHandler
-                0x0800eb1c                DFSDM1_FLT3_IRQHandler
-                0x0800eb1c                BDMA_Channel7_IRQHandler
-                0x0800eb1c                CRYP_IRQHandler
-                0x0800eb1c                LPTIM5_IRQHandler
-                0x0800eb1c                ADC3_IRQHandler
-                0x0800eb1c                DMA2_Stream0_IRQHandler
-                0x0800eb1c                BDMA_Channel2_IRQHandler
-                0x0800eb1c                QUADSPI_IRQHandler
-                0x0800eb1c                DMA1_Stream6_IRQHandler
-                0x0800eb1c                DMAMUX1_OVR_IRQHandler
-                0x0800eb1c                BDMA_Channel5_IRQHandler
-                0x0800eb1c                RCC_IRQHandler
-                0x0800eb1c                TIM1_TRG_COM_IRQHandler
-                0x0800eb1c                Default_Handler
-                0x0800eb1c                ECC_IRQHandler
-                0x0800eb1c                CEC_IRQHandler
-                0x0800eb1c                BDMA_Channel0_IRQHandler
-                0x0800eb1c                ADC_IRQHandler
-                0x0800eb1c                DMA1_Stream7_IRQHandler
-                0x0800eb1c                HRTIM1_TIMA_IRQHandler
-                0x0800eb1c                SPI5_IRQHandler
-                0x0800eb1c                SDMMC1_IRQHandler
-                0x0800eb1c                DMA2_Stream7_IRQHandler
-                0x0800eb1c                PVD_AVD_IRQHandler
-                0x0800eb1c                RTC_WKUP_IRQHandler
-                0x0800eb1c                LTDC_IRQHandler
-                0x0800eb1c                SAI3_IRQHandler
-                0x0800eb1c                ETH_WKUP_IRQHandler
-                0x0800eb1c                SPDIF_RX_IRQHandler
-                0x0800eb1c                SPI2_IRQHandler
-                0x0800eb1c                OTG_HS_EP1_IN_IRQHandler
-                0x0800eb1c                MemManage_Handler
-                0x0800eb1c                SVC_Handler
-                0x0800eb1c                CRS_IRQHandler
-                0x0800eb1c                HRTIM1_TIMB_IRQHandler
-                0x0800eb1c                FDCAN2_IT1_IRQHandler
-                0x0800eb1c                ETH_IRQHandler
-                0x0800eb1c                BDMA_Channel4_IRQHandler
-                0x0800eb1c                OTG_HS_EP1_OUT_IRQHandler
-                0x0800eb1c                WWDG_IRQHandler
-                0x0800eb1c                SPI6_IRQHandler
-                0x0800eb1c                MDIOS_IRQHandler
-                0x0800eb1c                FDCAN2_IT0_IRQHandler
-                0x0800eb1c                FDCAN1_IT0_IRQHandler
-                0x0800eb1c                OTG_HS_IRQHandler
-                0x0800eb1c                DMA2D_IRQHandler
-                0x0800eb1c                TIM1_BRK_IRQHandler
-                0x0800eb1c                SDMMC2_IRQHandler
-                0x0800eb1c                OTG_FS_EP1_OUT_IRQHandler
-                0x0800eb1c                BDMA_Channel3_IRQHandler
-                0x0800eb1c                MDIOS_WKUP_IRQHandler
-                0x0800eb1c                DFSDM1_FLT0_IRQHandler
-                0x0800eb1c                SAI4_IRQHandler
-                0x0800eb1c                DMA2_Stream1_IRQHandler
-                0x0800eb1c                FLASH_IRQHandler
-                0x0800eb1c                DMA2_Stream4_IRQHandler
-                0x0800eb1c                BusFault_Handler
-                0x0800eb1c                SPI3_IRQHandler
-                0x0800eb1c                WAKEUP_PIN_IRQHandler
-                0x0800eb1c                OTG_FS_EP1_IN_IRQHandler
-                0x0800eb1c                FMC_IRQHandler
-                0x0800eb1c                FDCAN_CAL_IRQHandler
-                0x0800eb1c                SWPMI1_IRQHandler
-                0x0800eb1c                COMP1_IRQHandler
-                0x0800eb1c                LPTIM1_IRQHandler
-                0x0800eb1c                DMA2_Stream6_IRQHandler
-                0x0800eb1c                RTC_Alarm_IRQHandler
+                0x0800e9ec        0x2 .pio/build/electrosmith_daisy/libFrameworkArduino.a(startup_stm32yyxx.S.o)
+                0x0800e9ec                SAI1_IRQHandler
+                0x0800e9ec                HASH_RNG_IRQHandler
+                0x0800e9ec                HRTIM1_Master_IRQHandler
+                0x0800e9ec                DebugMon_Handler
+                0x0800e9ec                SPI4_IRQHandler
+                0x0800e9ec                BDMA_Channel6_IRQHandler
+                0x0800e9ec                DMA2_Stream5_IRQHandler
+                0x0800e9ec                HardFault_Handler
+                0x0800e9ec                HRTIM1_FLT_IRQHandler
+                0x0800e9ec                JPEG_IRQHandler
+                0x0800e9ec                DMA1_Stream5_IRQHandler
+                0x0800e9ec                BDMA_Channel1_IRQHandler
+                0x0800e9ec                HRTIM1_TIMD_IRQHandler
+                0x0800e9ec                TAMP_STAMP_IRQHandler
+                0x0800e9ec                PendSV_Handler
+                0x0800e9ec                NMI_Handler
+                0x0800e9ec                LPTIM4_IRQHandler
+                0x0800e9ec                LPTIM2_IRQHandler
+                0x0800e9ec                DFSDM1_FLT1_IRQHandler
+                0x0800e9ec                DMAMUX2_OVR_IRQHandler
+                0x0800e9ec                DFSDM1_FLT2_IRQHandler
+                0x0800e9ec                MDMA_IRQHandler
+                0x0800e9ec                LPTIM3_IRQHandler
+                0x0800e9ec                HSEM1_IRQHandler
+                0x0800e9ec                DMA1_Stream2_IRQHandler
+                0x0800e9ec                FPU_IRQHandler
+                0x0800e9ec                OTG_HS_WKUP_IRQHandler
+                0x0800e9ec                FDCAN1_IT1_IRQHandler
+                0x0800e9ec                UsageFault_Handler
+                0x0800e9ec                LTDC_ER_IRQHandler
+                0x0800e9ec                DMA2_Stream2_IRQHandler
+                0x0800e9ec                HRTIM1_TIME_IRQHandler
+                0x0800e9ec                SPI1_IRQHandler
+                0x0800e9ec                DCMI_IRQHandler
+                0x0800e9ec                HRTIM1_TIMC_IRQHandler
+                0x0800e9ec                DMA2_Stream3_IRQHandler
+                0x0800e9ec                SAI2_IRQHandler
+                0x0800e9ec                DFSDM1_FLT3_IRQHandler
+                0x0800e9ec                BDMA_Channel7_IRQHandler
+                0x0800e9ec                CRYP_IRQHandler
+                0x0800e9ec                LPTIM5_IRQHandler
+                0x0800e9ec                ADC3_IRQHandler
+                0x0800e9ec                DMA2_Stream0_IRQHandler
+                0x0800e9ec                BDMA_Channel2_IRQHandler
+                0x0800e9ec                QUADSPI_IRQHandler
+                0x0800e9ec                DMA1_Stream6_IRQHandler
+                0x0800e9ec                DMAMUX1_OVR_IRQHandler
+                0x0800e9ec                BDMA_Channel5_IRQHandler
+                0x0800e9ec                RCC_IRQHandler
+                0x0800e9ec                TIM1_TRG_COM_IRQHandler
+                0x0800e9ec                Default_Handler
+                0x0800e9ec                ECC_IRQHandler
+                0x0800e9ec                CEC_IRQHandler
+                0x0800e9ec                BDMA_Channel0_IRQHandler
+                0x0800e9ec                ADC_IRQHandler
+                0x0800e9ec                DMA1_Stream7_IRQHandler
+                0x0800e9ec                HRTIM1_TIMA_IRQHandler
+                0x0800e9ec                SPI5_IRQHandler
+                0x0800e9ec                SDMMC1_IRQHandler
+                0x0800e9ec                DMA2_Stream7_IRQHandler
+                0x0800e9ec                PVD_AVD_IRQHandler
+                0x0800e9ec                RTC_WKUP_IRQHandler
+                0x0800e9ec                LTDC_IRQHandler
+                0x0800e9ec                SAI3_IRQHandler
+                0x0800e9ec                ETH_WKUP_IRQHandler
+                0x0800e9ec                SPDIF_RX_IRQHandler
+                0x0800e9ec                SPI2_IRQHandler
+                0x0800e9ec                OTG_HS_EP1_IN_IRQHandler
+                0x0800e9ec                MemManage_Handler
+                0x0800e9ec                SVC_Handler
+                0x0800e9ec                CRS_IRQHandler
+                0x0800e9ec                HRTIM1_TIMB_IRQHandler
+                0x0800e9ec                FDCAN2_IT1_IRQHandler
+                0x0800e9ec                ETH_IRQHandler
+                0x0800e9ec                BDMA_Channel4_IRQHandler
+                0x0800e9ec                OTG_HS_EP1_OUT_IRQHandler
+                0x0800e9ec                WWDG_IRQHandler
+                0x0800e9ec                SPI6_IRQHandler
+                0x0800e9ec                MDIOS_IRQHandler
+                0x0800e9ec                FDCAN2_IT0_IRQHandler
+                0x0800e9ec                FDCAN1_IT0_IRQHandler
+                0x0800e9ec                OTG_HS_IRQHandler
+                0x0800e9ec                DMA2D_IRQHandler
+                0x0800e9ec                TIM1_BRK_IRQHandler
+                0x0800e9ec                SDMMC2_IRQHandler
+                0x0800e9ec                OTG_FS_EP1_OUT_IRQHandler
+                0x0800e9ec                BDMA_Channel3_IRQHandler
+                0x0800e9ec                MDIOS_WKUP_IRQHandler
+                0x0800e9ec                DFSDM1_FLT0_IRQHandler
+                0x0800e9ec                SAI4_IRQHandler
+                0x0800e9ec                DMA2_Stream1_IRQHandler
+                0x0800e9ec                FLASH_IRQHandler
+                0x0800e9ec                DMA2_Stream4_IRQHandler
+                0x0800e9ec                BusFault_Handler
+                0x0800e9ec                SPI3_IRQHandler
+                0x0800e9ec                WAKEUP_PIN_IRQHandler
+                0x0800e9ec                OTG_FS_EP1_IN_IRQHandler
+                0x0800e9ec                FMC_IRQHandler
+                0x0800e9ec                FDCAN_CAL_IRQHandler
+                0x0800e9ec                SWPMI1_IRQHandler
+                0x0800e9ec                COMP1_IRQHandler
+                0x0800e9ec                LPTIM1_IRQHandler
+                0x0800e9ec                DMA2_Stream6_IRQHandler
+                0x0800e9ec                RTC_Alarm_IRQHandler
  .text.mapResolution
-                0x0800eb1e       0x26 .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_analog.c.o)
+                0x0800e9ee       0x26 .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_analog.c.o)
  .text.analogRead
-                0x0800eb44       0x2c .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_analog.c.o)
-                0x0800eb44                analogRead
- .text.pinMode  0x0800eb70       0xd4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_digital.c.o)
-                0x0800eb70                pinMode
+                0x0800ea14       0x2c .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_analog.c.o)
+                0x0800ea14                analogRead
+ .text.pinMode  0x0800ea40       0xd4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_digital.c.o)
+                0x0800ea40                pinMode
  .text.digitalWrite
-                0x0800ec44       0x70 .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_digital.c.o)
-                0x0800ec44                digitalWrite
+                0x0800eb14       0x70 .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_digital.c.o)
+                0x0800eb14                digitalWrite
  .text.digitalRead
-                0x0800ecb4       0x68 .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_digital.c.o)
-                0x0800ecb4                digitalRead
- .text.millis   0x0800ed1c        0x4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_time.c.o)
-                0x0800ed1c                millis
- .text.delay    0x0800ed20       0x1c .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_time.c.o)
-                0x0800ed20                delay
+                0x0800eb84       0x68 .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_digital.c.o)
+                0x0800eb84                digitalRead
+ .text.millis   0x0800ebec        0x4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_time.c.o)
+                0x0800ebec                millis
+ .text.delay    0x0800ebf0       0x1c .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_time.c.o)
+                0x0800ebf0                delay
  .text._Z14serialEventRunv
-                0x0800ed3c       0x34 .pio/build/electrosmith_daisy/libFrameworkArduino.a(WSerial.cpp.o)
-                0x0800ed3c                serialEventRun()
- .text.init     0x0800ed70        0x4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(board.c.o)
-                0x0800ed70                init
- .text.__empty  0x0800ed74        0x2 .pio/build/electrosmith_daisy/libFrameworkArduino.a(hooks.c.o)
-                0x0800ed74                yield
- *fill*         0x0800ed76        0x2 
+                0x0800ec0c       0x34 .pio/build/electrosmith_daisy/libFrameworkArduino.a(WSerial.cpp.o)
+                0x0800ec0c                serialEventRun()
+ .text.init     0x0800ec40        0x4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(board.c.o)
+                0x0800ec40                init
+ .text.__empty  0x0800ec44        0x2 .pio/build/electrosmith_daisy/libFrameworkArduino.a(hooks.c.o)
+                0x0800ec44                yield
+ *fill*         0x0800ec46        0x2 
  .text.pinNametoDigitalPin
-                0x0800ed78       0x34 .pio/build/electrosmith_daisy/libFrameworkArduino.a(pins_arduino.c.o)
-                0x0800ed78                pinNametoDigitalPin
+                0x0800ec48       0x34 .pio/build/electrosmith_daisy/libFrameworkArduino.a(pins_arduino.c.o)
+                0x0800ec48                pinNametoDigitalPin
  .text.analogInputToPinName
-                0x0800edac       0x78 .pio/build/electrosmith_daisy/libFrameworkArduino.a(pins_arduino.c.o)
-                0x0800edac                analogInputToPinName
+                0x0800ec7c       0x78 .pio/build/electrosmith_daisy/libFrameworkArduino.a(pins_arduino.c.o)
+                0x0800ec7c                analogInputToPinName
  .text._ZN14HardwareSerial9availableEv
-                0x0800ee24       0x10 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ee24                HardwareSerial::available()
+                0x0800ecf4       0x10 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ecf4                HardwareSerial::available()
  .text._ZN14HardwareSerial4peekEv
-                0x0800ee34       0x1a .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ee34                HardwareSerial::peek()
+                0x0800ed04       0x1a .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ed04                HardwareSerial::peek()
  .text._ZN14HardwareSerial17availableForWriteEv
-                0x0800ee4e       0x1c .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ee4e                HardwareSerial::availableForWrite()
+                0x0800ed1e       0x1c .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ed1e                HardwareSerial::availableForWrite()
  .text._ZN14HardwareSerial5writeEh
-                0x0800ee6a       0x18 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ee6a                HardwareSerial::write(unsigned char)
- *fill*         0x0800ee82        0x2 
+                0x0800ed3a       0x18 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ed3a                HardwareSerial::write(unsigned char)
+ *fill*         0x0800ed52        0x2 
  .text._ZN14HardwareSerial16_tx_complete_irqEP8serial_s
-                0x0800ee84       0x64 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ee84                HardwareSerial::_tx_complete_irq(serial_s*)
+                0x0800ed54       0x64 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ed54                HardwareSerial::_tx_complete_irq(serial_s*)
  .text._ZN14HardwareSerial5writeEPKhj
-                0x0800eee8       0xe4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800eee8                HardwareSerial::write(unsigned char const*, unsigned int)
+                0x0800edb8       0xe4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800edb8                HardwareSerial::write(unsigned char const*, unsigned int)
  .text._ZN14HardwareSerial4initE7PinNameS0_S0_S0_
-                0x0800efcc       0x32 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800efcc                HardwareSerial::init(PinName, PinName, PinName, PinName)
- *fill*         0x0800effe        0x2 
+                0x0800ee9c       0x32 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ee9c                HardwareSerial::init(PinName, PinName, PinName, PinName)
+ *fill*         0x0800eece        0x2 
  .text._ZN14HardwareSerialC2EPv16HalfDuplexMode_t
-                0x0800f000       0x80 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800f000                HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t)
-                0x0800f000                HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t)
+                0x0800eed0       0x80 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800eed0                HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t)
+                0x0800eed0                HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t)
  .text._ZN14HardwareSerial5flushEm
-                0x0800f080       0x36 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800f080                HardwareSerial::flush(unsigned long)
+                0x0800ef50       0x36 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ef50                HardwareSerial::flush(unsigned long)
  .text._ZN14HardwareSerial5flushEv
-                0x0800f0b6        0x6 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800f0b6                HardwareSerial::flush()
+                0x0800ef86        0x6 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ef86                HardwareSerial::flush()
  .text._ZN14HardwareSerial18enableHalfDuplexRxEv
-                0x0800f0bc       0x2c .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800f0bc                HardwareSerial::enableHalfDuplexRx()
+                0x0800ef8c       0x2c .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ef8c                HardwareSerial::enableHalfDuplexRx()
  .text._ZN14HardwareSerial4readEv
-                0x0800f0e8       0x2e .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800f0e8                HardwareSerial::read()
- *fill*         0x0800f116        0x2 
+                0x0800efb8       0x2e .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800efb8                HardwareSerial::read()
+ *fill*         0x0800efe6        0x2 
  .text.startup._GLOBAL__sub_I_Serial1
-                0x0800f118       0x14 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800efe8       0x14 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
  .text._ZN5Print17availableForWriteEv
-                0x0800f12c        0x4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(Stream.cpp.o)
-                0x0800f12c                Print::availableForWrite()
+                0x0800effc        0x4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(Stream.cpp.o)
+                0x0800effc                Print::availableForWrite()
  .text._ZN6Stream9timedReadEv
-                0x0800f130       0x2a .pio/build/electrosmith_daisy/libFrameworkArduino.a(Stream.cpp.o)
-                0x0800f130                Stream::timedRead()
+                0x0800f000       0x2a .pio/build/electrosmith_daisy/libFrameworkArduino.a(Stream.cpp.o)
+                0x0800f000                Stream::timedRead()
  .text._ZN6Stream9readBytesEPcj
-                0x0800f15a       0x22 .pio/build/electrosmith_daisy/libFrameworkArduino.a(Stream.cpp.o)
-                0x0800f15a                Stream::readBytes(char*, unsigned int)
+                0x0800f02a       0x22 .pio/build/electrosmith_daisy/libFrameworkArduino.a(Stream.cpp.o)
+                0x0800f02a                Stream::readBytes(char*, unsigned int)
  .text._ZN6Stream14readBytesUntilEcPcj
-                0x0800f17c       0x30 .pio/build/electrosmith_daisy/libFrameworkArduino.a(Stream.cpp.o)
-                0x0800f17c                Stream::readBytesUntil(char, char*, unsigned int)
+                0x0800f04c       0x30 .pio/build/electrosmith_daisy/libFrameworkArduino.a(Stream.cpp.o)
+                0x0800f04c                Stream::readBytesUntil(char, char*, unsigned int)
  .text.unlikely._ZSt25__throw_bad_function_callv
-                0x0800f1ac        0x6 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(functional.o)
-                0x0800f1ac                std::__throw_bad_function_call()
+                0x0800f07c        0x6 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libstdc++_nano.a(functional.o)
+                0x0800f07c                std::__throw_bad_function_call()
  .text._ZN7TwoWire9availableEv
-                0x0800f1b2        0x8 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f1b2                TwoWire::available()
+                0x0800f082        0x8 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f082                TwoWire::available()
  .text._ZN7TwoWire4readEv
-                0x0800f1ba       0x1a .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f1ba                TwoWire::read()
+                0x0800f08a       0x1a .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f08a                TwoWire::read()
  .text._ZN7TwoWire4peekEv
-                0x0800f1d4       0x12 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f1d4                TwoWire::peek()
+                0x0800f0a4       0x12 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f0a4                TwoWire::peek()
  .text._ZN7TwoWire16onRequestServiceEP5i2c_s
-                0x0800f1e6       0x16 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f1e6                TwoWire::onRequestService(i2c_s*)
+                0x0800f0b6       0x16 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f0b6                TwoWire::onRequestService(i2c_s*)
  .text._ZN7TwoWireC2Emm
-                0x0800f1fc       0xcc .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f1fc                TwoWire::TwoWire(unsigned long, unsigned long)
-                0x0800f1fc                TwoWire::TwoWire(unsigned long, unsigned long)
+                0x0800f0cc       0xcc .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f0cc                TwoWire::TwoWire(unsigned long, unsigned long)
+                0x0800f0cc                TwoWire::TwoWire(unsigned long, unsigned long)
  .text._ZN7TwoWire3endEv
-                0x0800f2c8       0x28 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f2c8                TwoWire::end()
+                0x0800f198       0x28 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f198                TwoWire::end()
  .text._ZN7TwoWireD2Ev
-                0x0800f2f0       0x28 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f2f0                TwoWire::~TwoWire()
-                0x0800f2f0                TwoWire::~TwoWire()
+                0x0800f1c0       0x28 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f1c0                TwoWire::~TwoWire()
+                0x0800f1c0                TwoWire::~TwoWire()
  .text._ZN7TwoWire8setClockEm
-                0x0800f318       0x34 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f318                TwoWire::setClock(unsigned long)
+                0x0800f1e8       0x34 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f1e8                TwoWire::setClock(unsigned long)
  .text._ZN7TwoWire17beginTransmissionEh
-                0x0800f34c       0x10 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f34c                TwoWire::beginTransmission(unsigned char)
+                0x0800f21c       0x10 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f21c                TwoWire::beginTransmission(unsigned char)
  .text._ZN7TwoWire17beginTransmissionEi
-                0x0800f35c       0x10 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f35c                TwoWire::beginTransmission(int)
+                0x0800f22c       0x10 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f22c                TwoWire::beginTransmission(int)
  .text._ZN7TwoWire16allocateRxBufferEj
-                0x0800f36c       0x24 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f36c                TwoWire::allocateRxBuffer(unsigned int)
+                0x0800f23c       0x24 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f23c                TwoWire::allocateRxBuffer(unsigned int)
  .text._ZN7TwoWire16onReceiveServiceEP5i2c_s
-                0x0800f390       0x4c .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f390                TwoWire::onReceiveService(i2c_s*)
+                0x0800f260       0x4c .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f260                TwoWire::onReceiveService(i2c_s*)
  .text._ZN7TwoWire16allocateTxBufferEj
-                0x0800f3dc       0x32 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f3dc                TwoWire::allocateTxBuffer(unsigned int)
+                0x0800f2ac       0x32 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f2ac                TwoWire::allocateTxBuffer(unsigned int)
  .text._ZN7TwoWire5writeEh
-                0x0800f40e       0x42 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f40e                TwoWire::write(unsigned char)
+                0x0800f2de       0x42 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f2de                TwoWire::write(unsigned char)
  .text._ZN7TwoWire5writeEPKhj
-                0x0800f450       0x42 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f450                TwoWire::write(unsigned char const*, unsigned int)
+                0x0800f320       0x42 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f320                TwoWire::write(unsigned char const*, unsigned int)
  .text._ZN7TwoWire13resetRxBufferEv
-                0x0800f492       0x10 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f492                TwoWire::resetRxBuffer()
+                0x0800f362       0x10 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f362                TwoWire::resetRxBuffer()
  .text._ZN7TwoWire13resetTxBufferEv
-                0x0800f4a2       0x10 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f4a2                TwoWire::resetTxBuffer()
+                0x0800f372       0x10 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f372                TwoWire::resetTxBuffer()
  .text._ZN7TwoWire15endTransmissionEh
-                0x0800f4b2       0x44 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f4b2                TwoWire::endTransmission(unsigned char)
+                0x0800f382       0x44 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f382                TwoWire::endTransmission(unsigned char)
  .text._ZN7TwoWire11requestFromEhhmhh
-                0x0800f4f6       0x96 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f4f6                TwoWire::requestFrom(unsigned char, unsigned char, unsigned long, unsigned char, unsigned char)
+                0x0800f3c6       0x96 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f3c6                TwoWire::requestFrom(unsigned char, unsigned char, unsigned long, unsigned char, unsigned char)
  .text._ZN7TwoWire11requestFromEhhh
-                0x0800f58c       0x12 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f58c                TwoWire::requestFrom(unsigned char, unsigned char, unsigned char)
+                0x0800f45c       0x12 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f45c                TwoWire::requestFrom(unsigned char, unsigned char, unsigned char)
  .text._ZN7TwoWire11requestFromEii
-                0x0800f59e        0xa .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f59e                TwoWire::requestFrom(int, int)
+                0x0800f46e        0xa .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f46e                TwoWire::requestFrom(int, int)
  .text._ZN7TwoWire15endTransmissionEv
-                0x0800f5a8        0x6 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f5a8                TwoWire::endTransmission()
+                0x0800f478        0x6 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f478                TwoWire::endTransmission()
  .text._ZN7TwoWire5flushEv
-                0x0800f5ae       0x18 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f5ae                TwoWire::flush()
- *fill*         0x0800f5c6        0x2 
+                0x0800f47e       0x18 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f47e                TwoWire::flush()
+ *fill*         0x0800f496        0x2 
  .text._ZN7TwoWire10recoverBusEv
-                0x0800f5c8       0xcc .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f5c8                TwoWire::recoverBus()
+                0x0800f498       0xcc .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f498                TwoWire::recoverBus()
  .text._ZN7TwoWire5beginEhbb
-                0x0800f694       0x98 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f694                TwoWire::begin(unsigned char, bool, bool)
+                0x0800f564       0x98 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f564                TwoWire::begin(unsigned char, bool, bool)
  .text._ZN7TwoWire5beginEb
-                0x0800f72c        0xa .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0800f72c                TwoWire::begin(bool)
- *fill*         0x0800f736        0x2 
+                0x0800f5fc        0xa .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f5fc                TwoWire::begin(bool)
+ *fill*         0x0800f606        0x2 
  .text.startup._GLOBAL__sub_I__ZN7TwoWireC2Emm
-                0x0800f738       0x10 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f608       0x10 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
  .text.exit._GLOBAL__sub_D__ZN7TwoWireC2Emm
-                0x0800f748        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x0800f618        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
  .text.i2c_getTiming.constprop.0
-                0x0800f754       0x3c .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800f624       0x3c .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
  .text.i2c_init
-                0x0800f790      0x204 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800f790                i2c_init
+                0x0800f660      0x204 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800f660                i2c_init
  .text.i2c_deinit
-                0x0800f994       0xf0 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800f994                i2c_deinit
+                0x0800f864       0xf0 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800f864                i2c_deinit
  .text.i2c_setTiming
-                0x0800fa84       0x28 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fa84                i2c_setTiming
+                0x0800f954       0x28 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800f954                i2c_setTiming
  .text.i2c_slave_write_IT
-                0x0800faac       0x34 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800faac                i2c_slave_write_IT
+                0x0800f97c       0x34 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800f97c                i2c_slave_write_IT
  .text.i2c_master_read
-                0x0800fae0       0x8e .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fae0                i2c_master_read
+                0x0800f9b0       0x8e .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800f9b0                i2c_master_read
  .text.i2c_IsDeviceReady
-                0x0800fb6e       0x40 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fb6e                i2c_IsDeviceReady
+                0x0800fa3e       0x40 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fa3e                i2c_IsDeviceReady
  .text.i2c_master_write
-                0x0800fbae       0xa2 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fbae                i2c_master_write
+                0x0800fa7e       0xa2 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fa7e                i2c_master_write
  .text.i2c_attachSlaveRxEvent
-                0x0800fc50        0xe .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fc50                i2c_attachSlaveRxEvent
+                0x0800fb20        0xe .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fb20                i2c_attachSlaveRxEvent
  .text.i2c_attachSlaveTxEvent
-                0x0800fc5e        0xe .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fc5e                i2c_attachSlaveTxEvent
+                0x0800fb2e        0xe .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fb2e                i2c_attachSlaveTxEvent
  .text.HAL_I2C_AddrCallback
-                0x0800fc6c       0x6e .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fc6c                HAL_I2C_AddrCallback
+                0x0800fb3c       0x6e .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fb3c                HAL_I2C_AddrCallback
  .text.HAL_I2C_ListenCpltCallback
-                0x0800fcda       0x2a .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fcda                HAL_I2C_ListenCpltCallback
+                0x0800fbaa       0x2a .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fbaa                HAL_I2C_ListenCpltCallback
  .text.HAL_I2C_SlaveRxCpltCallback
-                0x0800fd04       0x26 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fd04                HAL_I2C_SlaveRxCpltCallback
+                0x0800fbd4       0x26 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fbd4                HAL_I2C_SlaveRxCpltCallback
  .text.HAL_I2C_SlaveTxCpltCallback
-                0x0800fd2a        0x8 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fd2a                HAL_I2C_SlaveTxCpltCallback
+                0x0800fbfa        0x8 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fbfa                HAL_I2C_SlaveTxCpltCallback
  .text.HAL_I2C_ErrorCallback
-                0x0800fd32        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fd32                HAL_I2C_ErrorCallback
- *fill*         0x0800fd3e        0x2 
+                0x0800fc02        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fc02                HAL_I2C_ErrorCallback
+ *fill*         0x0800fc0e        0x2 
  .text.I2C1_EV_IRQHandler
-                0x0800fd40        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fd40                I2C1_EV_IRQHandler
+                0x0800fc10        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fc10                I2C1_EV_IRQHandler
  .text.I2C1_ER_IRQHandler
-                0x0800fd4c        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fd4c                I2C1_ER_IRQHandler
+                0x0800fc1c        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fc1c                I2C1_ER_IRQHandler
  .text.I2C2_EV_IRQHandler
-                0x0800fd58        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fd58                I2C2_EV_IRQHandler
+                0x0800fc28        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fc28                I2C2_EV_IRQHandler
  .text.I2C2_ER_IRQHandler
-                0x0800fd64        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fd64                I2C2_ER_IRQHandler
+                0x0800fc34        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fc34                I2C2_ER_IRQHandler
  .text.I2C3_EV_IRQHandler
-                0x0800fd70        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fd70                I2C3_EV_IRQHandler
+                0x0800fc40        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fc40                I2C3_EV_IRQHandler
  .text.I2C3_ER_IRQHandler
-                0x0800fd7c        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fd7c                I2C3_ER_IRQHandler
+                0x0800fc4c        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fc4c                I2C3_ER_IRQHandler
  .text.I2C4_EV_IRQHandler
-                0x0800fd88       0x1c .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fd88                I2C4_EV_IRQHandler
+                0x0800fc58       0x1c .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fc58                I2C4_EV_IRQHandler
  .text.I2C4_ER_IRQHandler
-                0x0800fda4        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
-                0x0800fda4                I2C4_ER_IRQHandler
- .text.fmodf    0x0800fdb0       0x48 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_fmod.o)
-                0x0800fdb0                fmodf
- .text.powf     0x0800fdf8       0xbc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_pow.o)
-                0x0800fdf8                powf
- .text.finitef  0x0800feb4       0x14 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_finite.o)
-                0x0800feb4                finitef
- .text.sinf     0x0800fec8       0x74 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_sin.o)
-                0x0800fec8                sinf
+                0x0800fc74        0xc .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x0800fc74                I2C4_ER_IRQHandler
+ .text.fmodf    0x0800fc80       0x48 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_fmod.o)
+                0x0800fc80                fmodf
+ .text.powf     0x0800fcc8       0xbc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-wf_pow.o)
+                0x0800fcc8                powf
+ .text.finitef  0x0800fd84       0x14 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_finite.o)
+                0x0800fd84                finitef
+ .text.sinf     0x0800fd98       0x74 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_sin.o)
+                0x0800fd98                sinf
  .text.__kernel_cosf
-                0x0800ff3c      0x104 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-kf_cos.o)
-                0x0800ff3c                __kernel_cosf
+                0x0800fe0c      0x104 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-kf_cos.o)
+                0x0800fe0c                __kernel_cosf
  .text.__kernel_sinf
-                0x08010040       0x90 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-kf_sin.o)
-                0x08010040                __kernel_sinf
+                0x0800ff10       0x90 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-kf_sin.o)
+                0x0800ff10                __kernel_sinf
  .text.__ieee754_fmodf
-                0x080100d0      0x164 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_fmod.o)
-                0x080100d0                __ieee754_fmodf
+                0x0800ffa0      0x164 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_fmod.o)
+                0x0800ffa0                __ieee754_fmodf
  .text.__ieee754_powf
-                0x08010234      0x68c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_pow.o)
-                0x08010234                __ieee754_powf
+                0x08010104      0x68c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_pow.o)
+                0x08010104                __ieee754_powf
  .text.__ieee754_rem_pio2f
-                0x080108c0      0x260 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_rem_pio2.o)
-                0x080108c0                __ieee754_rem_pio2f
+                0x08010790      0x260 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_rem_pio2.o)
+                0x08010790                __ieee754_rem_pio2f
  .text.with_errnof
-                0x08010b20       0x1c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
- .text.xflowf   0x08010b3c       0x20 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+                0x080109f0       0x1c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+ .text.xflowf   0x08010a0c       0x20 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
  .text.__math_uflowf
-                0x08010b5c        0xc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
-                0x08010b5c                __math_uflowf
+                0x08010a2c        0xc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+                0x08010a2c                __math_uflowf
  .text.__math_oflowf
-                0x08010b68        0xc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
-                0x08010b68                __math_oflowf
- .text.scalbnf  0x08010b74       0xe4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_scalbn.o)
-                0x08010b74                scalbnf
- .text.fabsf    0x08010c58       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_fabs.o)
-                0x08010c58                fabsf
+                0x08010a38        0xc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-math_errf.o)
+                0x08010a38                __math_oflowf
+ .text.scalbnf  0x08010a44       0xe4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_scalbn.o)
+                0x08010a44                scalbnf
+ .text.fabsf    0x08010b28       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_fabs.o)
+                0x08010b28                fabsf
  .text.__kernel_rem_pio2f
-                0x08010c68      0x66c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-kf_rem_pio2.o)
-                0x08010c68                __kernel_rem_pio2f
+                0x08010b38      0x66c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-kf_rem_pio2.o)
+                0x08010b38                __kernel_rem_pio2f
  .text.__ieee754_sqrtf
-                0x080112d4        0x8 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_sqrt.o)
-                0x080112d4                __ieee754_sqrtf
- .text.floorf   0x080112dc       0x94 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_floor.o)
-                0x080112dc                floorf
- .text.abort    0x08011370        0xe /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-abort.o)
-                0x08011370                abort
- *fill*         0x0801137e        0x2 
- .text.malloc   0x08011380       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-malloc.o)
-                0x08011380                malloc
- .text.free     0x08011390       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-malloc.o)
-                0x08011390                free
+                0x080111a4        0x8 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_sqrt.o)
+                0x080111a4                __ieee754_sqrtf
+ .text.floorf   0x080111ac       0x94 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-sf_floor.o)
+                0x080111ac                floorf
+ .text.abort    0x08011240        0xe /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-abort.o)
+                0x08011240                abort
+ *fill*         0x0801124e        0x2 
+ .text.malloc   0x08011250       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-malloc.o)
+                0x08011250                malloc
+ .text.free     0x08011260       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-malloc.o)
+                0x08011260                free
  .text.sbrk_aligned
-                0x080113a0       0x44 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x08011270       0x44 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
  .text._malloc_r
-                0x080113e4      0x100 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
-                0x080113e4                _malloc_r
+                0x080112b4      0x100 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x080112b4                _malloc_r
  .text.__malloc_lock
-                0x080114e4        0xc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
-                0x080114e4                __malloc_lock
+                0x080113b4        0xc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+                0x080113b4                __malloc_lock
  .text.__malloc_unlock
-                0x080114f0        0xc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
-                0x080114f0                __malloc_unlock
- .text.realloc  0x080114fc       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-realloc.o)
-                0x080114fc                realloc
+                0x080113c0        0xc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mlock.o)
+                0x080113c0                __malloc_unlock
+ .text.realloc  0x080113cc       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-realloc.o)
+                0x080113cc                realloc
  .text._realloc_r
-                0x0801150c       0x5c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reallocr.o)
-                0x0801150c                _realloc_r
- .text.memset   0x08011568       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
-                0x08011568                memset
+                0x080113dc       0x5c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reallocr.o)
+                0x080113dc                _realloc_r
+ .text.memset   0x08011438       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memset.o)
+                0x08011438                memset
  .text._raise_r
-                0x08011578       0x50 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-signal.o)
-                0x08011578                _raise_r
- .text.raise    0x080115c8       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-signal.o)
-                0x080115c8                raise
- .text._kill_r  0x080115d8       0x24 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-signalr.o)
-                0x080115d8                _kill_r
+                0x08011448       0x50 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-signal.o)
+                0x08011448                _raise_r
+ .text.raise    0x08011498       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-signal.o)
+                0x08011498                raise
+ .text._kill_r  0x080114a8       0x24 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-signalr.o)
+                0x080114a8                _kill_r
  .text._getpid_r
-                0x080115fc        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-signalr.o)
-                0x080115fc                _getpid_r
- .text._sbrk_r  0x08011600       0x20 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
-                0x08011600                _sbrk_r
- .text.__errno  0x08011620        0xc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
-                0x08011620                __errno
+                0x080114cc        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-signalr.o)
+                0x080114cc                _getpid_r
+ .text._sbrk_r  0x080114d0       0x20 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-sbrkr.o)
+                0x080114d0                _sbrk_r
+ .text.__errno  0x080114f0        0xc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-errno.o)
+                0x080114f0                __errno
  .text.__libc_init_array
-                0x0801162c       0x48 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
-                0x0801162c                __libc_init_array
+                0x080114fc       0x48 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-init.o)
+                0x080114fc                __libc_init_array
  .text.__retarget_lock_acquire_recursive
-                0x08011674        0x2 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
-                0x08011674                __retarget_lock_acquire_recursive
+                0x08011544        0x2 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
+                0x08011544                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x08011676        0x2 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
-                0x08011676                __retarget_lock_release_recursive
- .text.memcpy   0x08011678       0x1c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcpy-stub.o)
-                0x08011678                memcpy
- .text._free_r  0x08011694       0x94 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
-                0x08011694                _free_r
+                0x08011546        0x2 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
+                0x08011546                __retarget_lock_release_recursive
+ .text.memcpy   0x08011548       0x1c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-memcpy-stub.o)
+                0x08011548                memcpy
+ .text._free_r  0x08011564       0x94 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-freer.o)
+                0x08011564                _free_r
  .text._malloc_usable_size_r
-                0x08011728       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-msizer.o)
-                0x08011728                _malloc_usable_size_r
+                0x080115f8       0x10 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-msizer.o)
+                0x080115f8                _malloc_usable_size_r
  *(.glue_7)
- .glue_7        0x08011738        0x0 linker stubs
+ .glue_7        0x08011608        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08011738        0x0 linker stubs
+ .glue_7t       0x08011608        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x08011738        0x0 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x08011608        0x0 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x08011738        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x08011738                _init
- .init          0x0801173c        0x8 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x08011608        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08011608                _init
+ .init          0x0801160c        0x8 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x08011744        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x08011744                _fini
- .fini          0x08011748        0x8 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x08011750                        . = ALIGN (0x4)
-                0x08011750                        _etext = .
+ .fini          0x08011614        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08011614                _fini
+ .fini          0x08011618        0x8 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x08011620                        . = ALIGN (0x4)
+                0x08011620                        _etext = .
 
-.vfp11_veneer   0x08011750        0x0
- .vfp11_veneer  0x08011750        0x0 linker stubs
+.vfp11_veneer   0x08011620        0x0
+ .vfp11_veneer  0x08011620        0x0 linker stubs
 
-.v4_bx          0x08011750        0x0
- .v4_bx         0x08011750        0x0 linker stubs
+.v4_bx          0x08011620        0x0
+ .v4_bx         0x08011620        0x0 linker stubs
 
-.iplt           0x08011750        0x0
- .iplt          0x08011750        0x0 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x08011620        0x0
+ .iplt          0x08011620        0x0 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x08011750     0x1078
-                0x08011750                        . = ALIGN (0x4)
+.rodata         0x08011620     0x1078
+                0x08011620                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08011750      0x200 .pio/build/electrosmith_daisy/src/main.cpp.o
- .rodata        0x08011950      0x200 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
- .rodata        0x08011b50       0x10 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+ .rodata        0x08011620      0x200 .pio/build/electrosmith_daisy/src/main.cpp.o
+ .rodata        0x08011820      0x200 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+ .rodata        0x08011a20       0x10 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
  *(.rodata*)
  .rodata._ZTV9USBSerial
-                0x08011b60       0x2c .pio/build/electrosmith_daisy/USBDevice/src/USBSerial.cpp.o
-                0x08011b60                vtable for USBSerial
+                0x08011a30       0x2c .pio/build/electrosmith_daisy/USBDevice/src/USBSerial.cpp.o
+                0x08011a30                vtable for USBSerial
  .rodata.USBD_ManufacturerStrDescriptor.str1.1
-                0x08011b8c       0x13 .pio/build/electrosmith_daisy/USBDevice/src/usbd_desc.c.o
+                0x08011a5c       0x13 .pio/build/electrosmith_daisy/USBDevice/src/usbd_desc.c.o
  .rodata.USBD_Class_ProductStrDescriptor.str1.1
-                0x08011b9f       0x34 .pio/build/electrosmith_daisy/USBDevice/src/usbd_desc.c.o
+                0x08011a6f       0x34 .pio/build/electrosmith_daisy/USBDevice/src/usbd_desc.c.o
  .rodata.USBD_Class_ConfigStrDescriptor.str1.1
-                0x08011bd3       0x16 .pio/build/electrosmith_daisy/USBDevice/src/usbd_desc.c.o
+                0x08011aa3       0x16 .pio/build/electrosmith_daisy/USBDevice/src/usbd_desc.c.o
  .rodata.USBD_Class_InterfaceStrDescriptor.str1.1
-                0x08011be9       0x19 .pio/build/electrosmith_daisy/USBDevice/src/usbd_desc.c.o
- *fill*         0x08011c02        0x2 
+                0x08011ab9       0x19 .pio/build/electrosmith_daisy/USBDevice/src/usbd_desc.c.o
+ *fill*         0x08011ad2        0x2 
  .rodata.ep_def
-                0x08011c04       0x28 .pio/build/electrosmith_daisy/USBDevice/src/usbd_ep_conf.c.o
-                0x08011c04                ep_def
+                0x08011ad4       0x28 .pio/build/electrosmith_daisy/USBDevice/src/usbd_ep_conf.c.o
+                0x08011ad4                ep_def
  .rodata.PinMap_USB_OTG_HS
-                0x08011c2c        0xc .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
-                0x08011c2c                PinMap_USB_OTG_HS
+                0x08011afc        0xc .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
+                0x08011afc                PinMap_USB_OTG_HS
  .rodata.PinMap_USB_OTG_FS
-                0x08011c38       0x3c .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
-                0x08011c38                PinMap_USB_OTG_FS
+                0x08011b08       0x3c .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
+                0x08011b08                PinMap_USB_OTG_FS
  .rodata.PinMap_UART_RX
-                0x08011c74       0x90 .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
-                0x08011c74                PinMap_UART_RX
+                0x08011b44       0x90 .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
+                0x08011b44                PinMap_UART_RX
  .rodata.PinMap_UART_TX
-                0x08011d04       0x90 .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
-                0x08011d04                PinMap_UART_TX
+                0x08011bd4       0x90 .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
+                0x08011bd4                PinMap_UART_TX
  .rodata.PinMap_TIM
-                0x08011d94      0x21c .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
-                0x08011d94                PinMap_TIM
+                0x08011c64      0x21c .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
+                0x08011c64                PinMap_TIM
  .rodata.PinMap_DAC
-                0x08011fb0       0x24 .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
-                0x08011fb0                PinMap_DAC
+                0x08011e80       0x24 .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
+                0x08011e80                PinMap_DAC
  .rodata.PinMap_ADC
-                0x08011fd4      0x12c .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
-                0x08011fd4                PinMap_ADC
+                0x08011ea4      0x12c .pio/build/electrosmith_daisy/FrameworkArduinoVariant/PeripheralPins_DAISY_SEED.c.o
+                0x08011ea4                PinMap_ADC
  .rodata.analogInputPin
-                0x08012100       0x30 .pio/build/electrosmith_daisy/FrameworkArduinoVariant/variant_DAISY_SEED.cpp.o
-                0x08012100                analogInputPin
+                0x08011fd0       0x30 .pio/build/electrosmith_daisy/FrameworkArduinoVariant/variant_DAISY_SEED.cpp.o
+                0x08011fd0                analogInputPin
  .rodata.digitalPin
-                0x08012130       0x84 .pio/build/electrosmith_daisy/FrameworkArduinoVariant/variant_DAISY_SEED.cpp.o
-                0x08012130                digitalPin
+                0x08012000       0x84 .pio/build/electrosmith_daisy/FrameworkArduinoVariant/variant_DAISY_SEED.cpp.o
+                0x08012000                digitalPin
  .rodata.CSWTCH.26
-                0x080121b4        0xc .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/analog.cpp.o
+                0x08012084        0xc .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/analog.cpp.o
  .rodata.CSWTCH.24
-                0x080121c0       0x50 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/analog.cpp.o
+                0x08012090       0x50 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/analog.cpp.o
  .rodata.pin_map_ll
-                0x08012210       0x40 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/pinmap.c.o
-                0x08012210                pin_map_ll
+                0x080120e0       0x40 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/pinmap.c.o
+                0x080120e0                pin_map_ll
  .rodata.PinMapAnalogSwitch
-                0x08012250       0x28 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/pinmap.c.o
-                0x08012250                PinMapAnalogSwitch
+                0x08012120       0x28 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/pinmap.c.o
+                0x08012120                PinMapAnalogSwitch
  .rodata.D1CorePrescTable
-                0x08012278       0x10 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/system_stm32yyxx.c.o
-                0x08012278                D1CorePrescTable
+                0x08012148       0x10 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/system_stm32yyxx.c.o
+                0x08012148                D1CorePrescTable
  .rodata.PinMap_I2C_SCL
-                0x08012288       0x48 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
-                0x08012288                PinMap_I2C_SCL
+                0x08012158       0x48 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+                0x08012158                PinMap_I2C_SCL
  .rodata.PinMap_I2C_SDA
-                0x080122d0       0x48 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
-                0x080122d0                PinMap_I2C_SDA
+                0x080121a0       0x48 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+                0x080121a0                PinMap_I2C_SDA
  .rodata._ZN13DaisyHardware10SetRingLedEhfff.str1.1
-                0x08012318       0x12 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+                0x080121e8       0x12 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
  .rodata.gpio_hal_pin_map
-                0x0801232a       0x20 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(hal_map.c.o)
- *fill*         0x0801234a        0x2 
+                0x080121fa       0x20 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(hal_map.c.o)
+ *fill*         0x0801221a        0x2 
  .rodata.gpio_hal_port_map
-                0x0801234c       0x30 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(hal_map.c.o)
+                0x0801221c       0x30 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(hal_map.c.o)
  .rodata.CSWTCH.39
-                0x0801237c       0x14 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x0801224c       0x14 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
  .rodata.CSWTCH.32
-                0x08012390        0x3 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x08012260        0x3 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
  .rodata.CSWTCH.31
-                0x08012393        0x3 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
- *fill*         0x08012396        0x2 
+                0x08012263        0x3 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+ *fill*         0x08012266        0x2 
  .rodata._ZTV14HardwareSerial
-                0x08012398       0x2c .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x08012398                vtable for HardwareSerial
+                0x08012268       0x2c .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x08012268                vtable for HardwareSerial
  .rodata._ZTV7TwoWire
-                0x080123c4       0x2c .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x080123c4                vtable for TwoWire
- .rodata.Zero   0x080123f0        0x8 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_fmod.o)
+                0x08012294       0x2c .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x08012294                vtable for TwoWire
+ .rodata.Zero   0x080122c0        0x8 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_fmod.o)
  .rodata.npio2_hw
-                0x080123f8       0x80 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_rem_pio2.o)
+                0x080122c8       0x80 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_rem_pio2.o)
  .rodata.two_over_pi
-                0x08012478      0x318 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_rem_pio2.o)
- .rodata.PIo2   0x08012790       0x2c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-kf_rem_pio2.o)
+                0x08012348      0x318 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-ef_rem_pio2.o)
+ .rodata.PIo2   0x08012660       0x2c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-kf_rem_pio2.o)
  .rodata.init_jk
-                0x080127bc        0xc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-kf_rem_pio2.o)
-                0x080127c8                        . = ALIGN (0x4)
+                0x0801268c        0xc /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a(libm_a-kf_rem_pio2.o)
+                0x08012698                        . = ALIGN (0x4)
 
-.ARM.extab      0x080127c8        0x0
-                0x080127c8                        . = ALIGN (0x4)
+.ARM.extab      0x08012698        0x0
+                0x08012698                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x080127c8                        . = ALIGN (0x4)
+                0x08012698                        . = ALIGN (0x4)
 
-.ARM            0x080127c8        0x8
-                0x080127c8                        . = ALIGN (0x4)
-                0x080127c8                        __exidx_start = .
+.ARM            0x08012698        0x8
+                0x08012698                        . = ALIGN (0x4)
+                0x08012698                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x080127c8        0x8 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
-                0x080127d0                        __exidx_end = .
-                0x080127d0                        . = ALIGN (0x4)
+ .ARM.exidx     0x08012698        0x8 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-strlen.o)
+                0x080126a0                        __exidx_end = .
+                0x080126a0                        . = ALIGN (0x4)
 
-.preinit_array  0x080127d0        0x0
-                0x080127d0                        . = ALIGN (0x4)
-                0x080127d0                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080126a0        0x0
+                0x080126a0                        . = ALIGN (0x4)
+                0x080126a0                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x080127d0                        PROVIDE (__preinit_array_end = .)
-                0x080127d0                        . = ALIGN (0x4)
+                0x080126a0                        PROVIDE (__preinit_array_end = .)
+                0x080126a0                        . = ALIGN (0x4)
 
-.init_array     0x080127d0       0x2c
-                0x080127d0                        . = ALIGN (0x4)
-                0x080127d0                        PROVIDE (__init_array_start = .)
+.init_array     0x080126a0       0x2c
+                0x080126a0                        . = ALIGN (0x4)
+                0x080126a0                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00101
-                0x080127d0        0x4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(main.cpp.o)
+                0x080126a0        0x4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(main.cpp.o)
  *(.init_array*)
- .init_array    0x080127d4        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
- .init_array    0x080127d8        0x4 .pio/build/electrosmith_daisy/USBDevice/src/USBSerial.cpp.o
- .init_array    0x080127dc        0x4 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/interrupt.cpp.o
- .init_array    0x080127e0        0x4 .pio/build/electrosmith_daisy/src/main.cpp.o
- .init_array    0x080127e4        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
- .init_array    0x080127e8        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
- .init_array    0x080127ec        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
- .init_array    0x080127f0        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(system.cpp.o)
- .init_array    0x080127f4        0x4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
- .init_array    0x080127f8        0x4 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x080127fc                        PROVIDE (__init_array_end = .)
-                0x080127fc                        . = ALIGN (0x4)
+ .init_array    0x080126a4        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .init_array    0x080126a8        0x4 .pio/build/electrosmith_daisy/USBDevice/src/USBSerial.cpp.o
+ .init_array    0x080126ac        0x4 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/interrupt.cpp.o
+ .init_array    0x080126b0        0x4 .pio/build/electrosmith_daisy/src/main.cpp.o
+ .init_array    0x080126b4        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+ .init_array    0x080126b8        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(DaisyDuino.cpp.o)
+ .init_array    0x080126bc        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
+ .init_array    0x080126c0        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(system.cpp.o)
+ .init_array    0x080126c4        0x4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+ .init_array    0x080126c8        0x4 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x080126cc                        PROVIDE (__init_array_end = .)
+                0x080126cc                        . = ALIGN (0x4)
 
-.fini_array     0x080127fc       0x10
-                0x080127fc                        . = ALIGN (0x4)
-                0x080127fc                        PROVIDE (__fini_array_start = .)
+.fini_array     0x080126cc       0x10
+                0x080126cc                        . = ALIGN (0x4)
+                0x080126cc                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x080127fc        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
- .fini_array    0x08012800        0x4 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/interrupt.cpp.o
- .fini_array    0x08012804        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
- .fini_array    0x08012808        0x4 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x0801280c                        PROVIDE (__fini_array_end = .)
-                0x0801280c                        . = ALIGN (0x4)
-                0x0801280c                        _sidata = LOADADDR (.data)
+ .fini_array    0x080126cc        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x080126d0        0x4 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/interrupt.cpp.o
+ .fini_array    0x080126d4        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+ .fini_array    0x080126d8        0x4 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x080126dc                        PROVIDE (__fini_array_end = .)
+                0x080126dc                        . = ALIGN (0x4)
+                0x080126dc                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x0801280c        0x0
- .rel.iplt      0x0801280c        0x0 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x080126dc        0x0
+ .rel.iplt      0x080126dc        0x0 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x24000000      0x240 load address 0x0801280c
+.data           0x24000000      0x244 load address 0x080126dc
                 0x24000000                        . = ALIGN (0x4)
                 0x24000000                        _sdata = .
  *(.data)
@@ -7575,127 +7560,130 @@ Linker script and memory map
                 0x240001e0                SystemCoreClock
  .data.heap_end.0
                 0x240001e4        0x4 .pio/build/electrosmith_daisy/SrcWrapper/src/syscalls.c.o
+ .data.waveforms
+                0x240001e8        0x4 .pio/build/electrosmith_daisy/src/main.cpp.o
+                0x240001e8                waveforms
  .data._internalReadResolution
-                0x240001e8        0x4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_analog.c.o)
- .data._readResolution
                 0x240001ec        0x4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_analog.c.o)
+ .data._readResolution
+                0x240001f0        0x4 .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_analog.c.o)
  .data._impure_ptr
-                0x240001f0        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
-                0x240001f0                _impure_ptr
+                0x240001f4        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+                0x240001f4                _impure_ptr
  .data._impure_data
-                0x240001f4       0x4c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
-                0x240001f4                _impure_data
-                0x24000240                        . = ALIGN (0x4)
-                0x24000240                        _edata = .
+                0x240001f8       0x4c /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-impure.o)
+                0x240001f8                _impure_data
+                0x24000244                        . = ALIGN (0x4)
+                0x24000244                        _edata = .
 
-.igot.plt       0x24000240        0x0 load address 0x08012a4c
- .igot.plt      0x24000240        0x0 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x24000240                        . = ALIGN (0x4)
+.igot.plt       0x24000244        0x0 load address 0x08012920
+ .igot.plt      0x24000244        0x0 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x24000244                        . = ALIGN (0x4)
 
-.bss            0x24000240     0x1f60 load address 0x08012a4c
-                0x24000240                        _sbss = .
-                0x24000240                        __bss_start__ = _sbss
+.bss            0x24000244     0x1e68 load address 0x08012920
+                0x24000244                        _sbss = .
+                0x24000244                        __bss_start__ = _sbss
  *(.bss)
  *(.bss*)
  .bss.completed.1
-                0x24000240        0x1 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
- *fill*         0x24000241        0x3 
- .bss.object.0  0x24000244       0x18 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x24000244        0x1 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ *fill*         0x24000245        0x3 
+ .bss.object.0  0x24000248       0x18 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  .bss.SerialUSB
-                0x2400025c       0x10 .pio/build/electrosmith_daisy/USBDevice/src/USBSerial.cpp.o
-                0x2400025c                SerialUSB
- .bss._hcdc     0x2400026c      0x21c .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc.c.o
-                0x2400026c                _hcdc
+                0x24000260       0x10 .pio/build/electrosmith_daisy/USBDevice/src/USBSerial.cpp.o
+                0x24000260                SerialUSB
+ .bss._hcdc     0x24000270      0x21c .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc.c.o
+                0x24000270                _hcdc
  .bss.transmitStart
-                0x24000488        0x4 .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
- .bss.rtsState  0x2400048c        0x1 .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
-                0x2400048c                rtsState
- .bss.dtrState  0x2400048d        0x1 .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
-                0x2400048d                dtrState
+                0x2400048c        0x4 .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
+ .bss.rtsState  0x24000490        0x1 .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
+                0x24000490                rtsState
+ .bss.dtrState  0x24000491        0x1 .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
+                0x24000491                dtrState
  .bss.ReceiveQueue
-                0x2400048e       0xc6 .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
-                0x2400048e                ReceiveQueue
+                0x24000492       0xc6 .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
+                0x24000492                ReceiveQueue
  .bss.TransmitQueue
-                0x24000554       0x86 .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
-                0x24000554                TransmitQueue
+                0x24000558       0x86 .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
+                0x24000558                TransmitQueue
  .bss.CDC_initialized
-                0x240005da        0x1 .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
- *fill*         0x240005db        0x1 
+                0x240005de        0x1 .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
+ *fill*         0x240005df        0x1 
  .bss.hUSBD_Device_CDC
-                0x240005dc      0x2dc .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
-                0x240005dc                hUSBD_Device_CDC
- .bss.cfgidx.0  0x240008b8        0x1 .pio/build/electrosmith_daisy/USBDevice/src/usb_device_ctlreq.c.o
- *fill*         0x240008b9        0x3 
- .bss.g_hpcd    0x240008bc      0x4e4 .pio/build/electrosmith_daisy/USBDevice/src/usbd_conf.c.o
-                0x240008bc                g_hpcd
+                0x240005e0      0x2dc .pio/build/electrosmith_daisy/USBDevice/src/cdc/usbd_cdc_if.c.o
+                0x240005e0                hUSBD_Device_CDC
+ .bss.cfgidx.0  0x240008bc        0x1 .pio/build/electrosmith_daisy/USBDevice/src/usb_device_ctlreq.c.o
+ *fill*         0x240008bd        0x3 
+ .bss.g_hpcd    0x240008c0      0x4e4 .pio/build/electrosmith_daisy/USBDevice/src/usbd_conf.c.o
+                0x240008c0                g_hpcd
  .bss.USBD_StrDesc.0
-                0x24000da0       0xff .pio/build/electrosmith_daisy/USBDevice/src/usbd_desc.c.o
- *fill*         0x24000e9f        0x1 
+                0x24000da4       0xff .pio/build/electrosmith_daisy/USBDevice/src/usbd_desc.c.o
+ *fill*         0x24000ea3        0x1 
  .bss.USBD_StrDesc
-                0x24000ea0      0x100 .pio/build/electrosmith_daisy/USBDevice/src/usbd_desc.c.o
-                0x24000ea0                USBD_StrDesc
- .bss.uwTick    0x24000fa0        0x4 .pio/build/electrosmith_daisy/SrcWrapper/src/HAL/stm32yyxx_hal.c.o
-                0x24000fa0                uwTick
+                0x24000ea4      0x100 .pio/build/electrosmith_daisy/USBDevice/src/usbd_desc.c.o
+                0x24000ea4                USBD_StrDesc
+ .bss.uwTick    0x24000fa4        0x4 .pio/build/electrosmith_daisy/SrcWrapper/src/HAL/stm32yyxx_hal.c.o
+                0x24000fa4                uwTick
  .bss.HardwareTimer_Handle
-                0x24000fa4       0x38 .pio/build/electrosmith_daisy/SrcWrapper/src/HardwareTimer.cpp.o
-                0x24000fa4                HardwareTimer_Handle
+                0x24000fa8       0x38 .pio/build/electrosmith_daisy/SrcWrapper/src/HardwareTimer.cpp.o
+                0x24000fa8                HardwareTimer_Handle
  .bss._ZL13gpio_irq_conf
-                0x24000fdc      0x140 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/interrupt.cpp.o
+                0x24000fe0      0x140 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/interrupt.cpp.o
  .bss.uart_handlers
-                0x2400111c       0x24 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/uart.c.o
- .bss.chordNum  0x24001140        0x4 .pio/build/electrosmith_daisy/src/main.cpp.o
-                0x24001140                chordNum
- .bss.chord     0x24001144       0x78 .pio/build/electrosmith_daisy/src/main.cpp.o
-                0x24001144                chord
- .bss.notes     0x240011bc       0x10 .pio/build/electrosmith_daisy/src/main.cpp.o
-                0x240011bc                notes
- .bss.osc       0x240011cc       0xa0 .pio/build/electrosmith_daisy/src/main.cpp.o
-                0x240011cc                osc
- .bss.hw        0x2400126c      0x548 .pio/build/electrosmith_daisy/src/main.cpp.o
-                0x2400126c                hw
+                0x24001120       0x24 .pio/build/electrosmith_daisy/SrcWrapper/src/stm32/uart.c.o
+ .bss._ZL6octave
+                0x24001144        0x4 .pio/build/electrosmith_daisy/src/main.cpp.o
+ .bss._ZL8waveform
+                0x24001148        0x4 .pio/build/electrosmith_daisy/src/main.cpp.o
+ .bss.sig       0x2400114c        0x4 .pio/build/electrosmith_daisy/src/main.cpp.o
+                0x2400114c                sig
+ .bss.osc       0x24001150       0x28 .pio/build/electrosmith_daisy/src/main.cpp.o
+                0x24001150                osc
+ .bss.hw        0x24001178      0x548 .pio/build/electrosmith_daisy/src/main.cpp.o
+                0x24001178                hw
  .bss.daisy_i2c2
-                0x240017b4       0xe4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
-                0x240017b4                daisy_i2c2
- .bss.DAISY     0x24001898       0x10 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
-                0x24001898                DAISY
+                0x240016c0       0xe4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+                0x240016c0                daisy_i2c2
+ .bss.DAISY     0x240017a4       0x10 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(AudioClass.cpp.o)
+                0x240017a4                DAISY
  .bss._ZN5daisyL12audio_handleE
-                0x240018a8       0x30 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
+                0x240017b4       0x30 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(audio.cpp.o)
  .bss._ZN5daisyL11sai_handlesE
-                0x240018d8      0x4b8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
+                0x240017e4      0x4b8 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sai.cpp.o)
  .bss.FMC_Initialized
-                0x24001d90        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sdram.c.o)
+                0x24001c9c        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sdram.c.o)
  .bss.dsy_sdram
-                0x24001d94       0x3c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sdram.c.o)
+                0x24001ca0       0x3c .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(sdram.c.o)
  .bss._ZN5daisy6System4tim_E
-                0x24001dd0        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(system.cpp.o)
-                0x24001dd0                daisy::System::tim_
+                0x24001cdc        0x4 .pio/build/electrosmith_daisy/lib13e/libDaisyDuino.a(system.cpp.o)
+                0x24001cdc                daisy::System::tim_
  .bss.g_anOutputPinConfigured
-                0x24001dd4       0x2c .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_analog.c.o)
-                0x24001dd4                g_anOutputPinConfigured
- .bss.Serial1   0x24001e00      0x164 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x24001e00                Serial1
- .bss.Wire      0x24001f64       0xe4 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
-                0x24001f64                Wire
+                0x24001ce0       0x2c .pio/build/electrosmith_daisy/libFrameworkArduino.a(wiring_analog.c.o)
+                0x24001ce0                g_anOutputPinConfigured
+ .bss.Serial1   0x24001d0c      0x164 .pio/build/electrosmith_daisy/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x24001d0c                Serial1
+ .bss.Wire      0x24001e70       0xe4 .pio/build/electrosmith_daisy/liba1f/libWire.a(Wire.cpp.o)
+                0x24001e70                Wire
  .bss.i2c_handles
-                0x24002048       0x10 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
+                0x24001f54       0x10 .pio/build/electrosmith_daisy/liba1f/libWire.a(twi.c.o)
  .bss.__malloc_sbrk_start
-                0x24002058        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
-                0x24002058                __malloc_sbrk_start
+                0x24001f64        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x24001f64                __malloc_sbrk_start
  .bss.__malloc_free_list
-                0x2400205c        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
-                0x2400205c                __malloc_free_list
- .bss.__sf      0x24002060      0x138 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
-                0x24002060                __sf
- .bss.errno     0x24002198        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
-                0x24002198                errno
+                0x24001f68        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-mallocr.o)
+                0x24001f68                __malloc_free_list
+ .bss.__sf      0x24001f6c      0x138 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-findfp.o)
+                0x24001f6c                __sf
+ .bss.errno     0x240020a4        0x4 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-reent.o)
+                0x240020a4                errno
  .bss.__lock___malloc_recursive_mutex
-                0x2400219c        0x1 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
-                0x2400219c                __lock___malloc_recursive_mutex
+                0x240020a8        0x1 /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc_nano.a(libc_a-lock.o)
+                0x240020a8                __lock___malloc_recursive_mutex
  *(COMMON)
-                0x240021a0                        . = ALIGN (0x4)
- *fill*         0x2400219d        0x3 
-                0x240021a0                        _ebss = .
-                0x240021a0                        __bss_end__ = _ebss
+                0x240020ac                        . = ALIGN (0x4)
+ *fill*         0x240020a9        0x3 
+                0x240020ac                        _ebss = .
+                0x240020ac                        __bss_end__ = _ebss
 LOAD /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
 LOAD /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 LOAD /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
@@ -7918,13 +7906,13 @@ END GROUP
 LOAD /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtend.o
 LOAD /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
 
-.noinit         0x240021a0        0x0
-                0x240021a0                        . = ALIGN (0x4)
-                0x240021a0                        _snoinit = .
+.noinit         0x240020ac        0x0
+                0x240020ac                        . = ALIGN (0x4)
+                0x240020ac                        _snoinit = .
  *(.noinit)
  *(.noinit*)
-                0x240021a0                        . = ALIGN (0x4)
-                0x240021a0                        _enoinit = .
+                0x240020ac                        . = ALIGN (0x4)
+                0x240020ac                        _enoinit = .
 
 .sram1_bss      0x30000000     0x4618
                 0x30000000                        . = ALIGN (0x4)
@@ -7941,15 +7929,16 @@ LOAD /Users/justin/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/
                 [!provide]                        PROVIDE (__sram1_bss_end = _esram1_bss)
 
 ._user_heap_stack
-                0x240021a0      0x600
-                0x240021a0                        . = ALIGN (0x8)
+                0x240020ac      0x604
+                0x240020b0                        . = ALIGN (0x8)
+ *fill*         0x240020ac        0x4 
                 [!provide]                        PROVIDE (end = .)
-                0x240021a0                        PROVIDE (_end = .)
-                0x240023a0                        . = (. + _Min_Heap_Size)
- *fill*         0x240021a0      0x200 
-                0x240027a0                        . = (. + _Min_Stack_Size)
- *fill*         0x240023a0      0x400 
-                0x240027a0                        . = ALIGN (0x8)
+                0x240020b0                        PROVIDE (_end = .)
+                0x240022b0                        . = (. + _Min_Heap_Size)
+ *fill*         0x240020b0      0x200 
+                0x240026b0                        . = (. + _Min_Stack_Size)
+ *fill*         0x240022b0      0x400 
+                0x240026b0                        . = ALIGN (0x8)
 
 .sdram_bss      0xc0000000        0x0
                 0xc0000000                        . = ALIGN (0x4)
