@@ -14,17 +14,33 @@ void DebugPrint();
 int currentOctave = 4;     // Base octave; e.g., if currentOctave=3 then the base note is 3*12 = 36 (i.e. C2)
 int currentScale = 0;      // Scale selection index (0 to NUM_SCALES-1)
 
-// ----- Existing Declarations ----- //
-const int NUM_SCALES = 6;  // no longer used; kept for legacy
+// Structure to hold scale information
+struct Scale {
+    const char* name;      // Name of the scale
+    int notes[12];         // Notes in the scale (up to 12)
+    int length;            // Number of notes in the scale
+    uint8_t colorR;        // Red component (0-255)
+    uint8_t colorG;        // Green component (0-255)
+    uint8_t colorB;        // Blue component (0-255)
+};
+
+// ----- Scale Definitions ----- //
 const int MAX_SCALE_LENGTH = 12;
-const int SCALE_LENGTHS[NUM_SCALES] = {7, 7, 5, 5, 6, 12};
-const int SCALES[NUM_SCALES][MAX_SCALE_LENGTH] = {
-  {0, 2, 4, 5, 7, 9, 11, 0, 0, 0, 0, 0},
-  {0, 2, 3, 5, 7, 8, 10, 0, 0, 0, 0, 0},
-  {0, 2, 4, 7, 9, 0, 0, 0, 0, 0, 0, 0},
-  {0, 3, 5, 7, 10, 0, 0, 0, 0, 0, 0, 0},
-  {0, 3, 5, 6, 7, 10, 0, 0, 0, 0, 0, 0},
-  {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+const int NUM_SCALES = 11;  // Updated to include all modes
+
+// Define all scales with their names, note patterns, and distinct LED colors
+const Scale SCALES[NUM_SCALES] = {
+    {"Ionian (Major)",    {0, 2, 4, 5, 7, 9, 11, 0, 0, 0, 0, 0}, 7,  255,   0,   0}, // Red
+    {"Aeolian (Minor)",   {0, 2, 3, 5, 7, 8, 10, 0, 0, 0, 0, 0}, 7,    0, 255,   0}, // Green
+    {"Dorian",            {0, 2, 3, 5, 7, 9, 10, 0, 0, 0, 0, 0}, 7,  255, 255,   0}, // Yellow
+    {"Phrygian",          {0, 1, 3, 5, 7, 8, 10, 0, 0, 0, 0, 0}, 7,    0,   0, 255}, // Blue
+    {"Lydian",            {0, 2, 4, 6, 7, 9, 11, 0, 0, 0, 0, 0}, 7,  255,   0, 255}, // Magenta
+    {"Mixolydian",        {0, 2, 4, 5, 7, 9, 10, 0, 0, 0, 0, 0}, 7,    0, 255, 255}, // Cyan
+    {"Locrian",           {0, 1, 3, 5, 6, 8, 10, 0, 0, 0, 0, 0}, 7,  255, 128,   0}, // Orange
+    {"Major Pentatonic",  {0, 2, 4, 7, 9, 0, 0, 0, 0, 0, 0, 0}, 5,  128,   0, 255}, // Purple
+    {"Minor Pentatonic",  {0, 3, 5, 7, 10, 0, 0, 0, 0, 0, 0, 0}, 5,    0, 128,  64}, // Teal
+    {"Blues",             {0, 3, 5, 6, 7, 10, 0, 0, 0, 0, 0, 0}, 6,  255, 255, 128}, // Light Yellow
+    {"Chromatic",         {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}, 12, 255, 255, 255}  // White
 };
 
 DaisyHardware hw;
@@ -189,8 +205,8 @@ void UpdateKnobs()
     float delta0 = fabsf(knob0 - prevKnob[0]);
     float delta1 = fabsf(knob1 - prevKnob[1]);
 
-    // Using two octaves: each octave has SCALE_LENGTH notes.
-    int scaleLength = SCALE_LENGTHS[currentScale];
+    // Using two octaves: each octave has a number of notes defined by the scale.
+    int scaleLength = SCALES[currentScale].length;
     int totalSteps = scaleLength * 2;
     // Quantize knob values to a discrete index in 0...totalSteps-1.
     int noteIndex0 = round(knob0 * totalSteps);
@@ -200,9 +216,9 @@ void UpdateKnobs()
 
     int noteOffset0;
     if (noteIndex0 < scaleLength)
-        noteOffset0 = SCALES[currentScale][noteIndex0];
+        noteOffset0 = SCALES[currentScale].notes[noteIndex0];
     else if (noteIndex0 < totalSteps - 1)
-        noteOffset0 = 12 + SCALES[currentScale][noteIndex0 - scaleLength];
+        noteOffset0 = 12 + SCALES[currentScale].notes[noteIndex0 - scaleLength];
     else
         // The top step should be exactly one octave above the second octave's base,
         // i.e. shift by 24 semitones instead of 12.
@@ -210,9 +226,9 @@ void UpdateKnobs()
 
     int noteOffset1;
     if (noteIndex1 < scaleLength)
-        noteOffset1 = SCALES[currentScale][noteIndex1];
+        noteOffset1 = SCALES[currentScale].notes[noteIndex1];
     else if (noteIndex1 < totalSteps - 1)
-        noteOffset1 = 12 + SCALES[currentScale][noteIndex1 - scaleLength];
+        noteOffset1 = 12 + SCALES[currentScale].notes[noteIndex1 - scaleLength];
     else
         noteOffset1 = 24;
 
@@ -252,38 +268,10 @@ void UpdateKnobs()
 //
 void UpdateLeds()
 {
-    uint32_t colorR = 0, colorG = 0, colorB = 0;
-    // Use currentScale to choose an LED color:
-    switch(currentScale)
-    {
-        case 0: // For example, scale 0 → Red
-            colorR = 255;
-            break;
-        case 1: // Scale 1 → Green
-            colorG = 255;
-            break;
-        case 2: // Scale 2 → Yellow
-            colorR = 255;
-            colorG = 255;
-            break;
-        case 3: // Scale 3 → Blue
-            colorB = 255;
-            break;
-        case 4: // Scale 4 → Magenta
-            colorR = 255;
-            colorB = 255;
-            break;
-        case 5: // Scale 5 → Cyan
-            colorG = 255;
-            colorB = 255;
-            break;
-        default:
-            // Fallback color
-            colorR = 128;
-            colorG = 128;
-            colorB = 128;
-            break;
-    }
+    // Get colors directly from the current scale
+    uint8_t colorR = SCALES[currentScale].colorR;
+    uint8_t colorG = SCALES[currentScale].colorG;
+    uint8_t colorB = SCALES[currentScale].colorB;
     
     if (oscillatorActive[0])
         hw.leds[0].Set((float)colorR/255.0f, (float)colorG/255.0f, (float)colorB/255.0f);
