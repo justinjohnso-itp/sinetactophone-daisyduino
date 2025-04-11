@@ -69,8 +69,8 @@ static void AudioCallback(float **in, float **out, size_t size)
         // Simple pan:
         // Oscillator 1 is panned to the left: more signal in left channel.
         // Oscillator 2 is panned to the right: more signal in right channel.
-        float left  = sig1 * 0.8f + sig2 * 0.2f;
-        float right = sig1 * 0.2f + sig2 * 0.8f;
+        float left  = sig1 * 0.6f + sig2 * 0.4f;
+        float right = sig1 * 0.4f + sig2 * 0.6f;
         
         out[0][i] = left;
         out[1][i] = right;
