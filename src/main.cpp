@@ -8,27 +8,11 @@ void UpdateEncoder();
 void UpdateButtons();
 void UpdateKnobs();
 void UpdateLeds();
-float getScaleNote(float rootFreq, float normalizedPosition, int scaleIndex);
-float getClosestChordNote(float rootFreq, float targetFreq, int chordIndex);
 void DebugPrint();
 
-// ----- New Chord System & Octave Settings ----- //
-struct Chord {
-    const char* name;
-    int intervals[3]; // intervals in semitones from the root
-};
-
-const int NUM_CHORDS = 4;
-Chord chords[NUM_CHORDS] = {
-    {"Major",    {0, 4, 7}},
-    {"Minor",    {0, 3, 7}},
-    {"Augmented",{0, 4, 8}},
-    {"Diminished",{0, 3, 6}}
-};
-
+// ----- Scale & Octave Settings ----- //
 int currentOctave = 4;     // Base octave; e.g., if currentOctave=3 then the base note is 3*12 = 36 (i.e. C2)
-int currentChord = 0;      // Index into the chords array
-int currentScale = 0;      // Added for knob quantization and scale selection (0 to NUM_SCALES-1)
+int currentScale = 0;      // Scale selection index (0 to NUM_SCALES-1)
 
 // ----- Existing Declarations ----- //
 const int NUM_SCALES = 6;  // no longer used; kept for legacy
@@ -53,7 +37,7 @@ bool oscillatorActive[2] = {false, false};
 // Default frequency for both oscillators
 float oscillatorFreq[2] = {440.0f, 440.0f};
 
-bool usingSineWave = true;  // no longer toggled by encoder press
+bool usingSineWave = true;  // toggles between sine and triangle wave
 
 // Track previous pot positions for movement detection
 float prevKnob[2] = {0.5f, 0.5f};
@@ -122,7 +106,7 @@ void DebugPrint()
     Serial.println(hw.buttons[1].Pressed() ? "Pressed" : "Released");
     
     Serial.print("Current Octave: "); Serial.println(currentOctave);
-    Serial.print("Current Chord: "); Serial.println(chords[currentChord].name);
+    Serial.print("Current Scale: "); Serial.println(currentScale);
     
     Serial.print("Oscillator 1: ");
     Serial.print(oscillatorActive[0] ? "ON" : "OFF");
@@ -132,14 +116,16 @@ void DebugPrint()
     Serial.print(oscillatorActive[1] ? "ON" : "OFF");
     Serial.print(" Freq: "); Serial.println(oscillatorFreq[1], 2);
     
-    // Use chord index to set LED color (for example purposes)
+    // Use scale index to set LED color (for example purposes)
     uint32_t colorR = 0, colorG = 0, colorB = 0;
-    switch(currentChord)
+    switch(currentScale)
     {
-        case 0: colorR = 255; break;      // Major → Red
-        case 1: colorG = 255; break;      // Minor → Green
-        case 2: colorR = 255, colorB = 255; break; // Augmented → Magenta
-        case 3: colorB = 255; break;      // Diminished → Blue
+        case 0: colorR = 255; break;      // Scale 0 → Red
+        case 1: colorG = 255; break;      // Scale 1 → Green
+        case 2: colorR = 255, colorG = 255; break; // Scale 2 → Yellow
+        case 3: colorB = 255; break;      // Scale 3 → Blue
+        case 4: colorR = 255, colorB = 255; break; // Scale 4 → Magenta
+        case 5: colorG = 255, colorB = 255; break; // Scale 5 → Cyan
     }
     
     Serial.print("LED0 (Oscillator 1): ");
@@ -262,7 +248,7 @@ void UpdateKnobs()
 
 //
 // UpdateLeds: sets each LED only when its associated oscillator is on.
-// The LED color is determined by the current chord.
+// The LED color is determined by the current scale.
 //
 void UpdateLeds()
 {
@@ -320,47 +306,4 @@ void UpdateControls()
     UpdateButtons();
     UpdateKnobs();
     UpdateLeds();
-}
-
-//
-// getClosestChordNote: given a reference (root) frequency and a target frequency,
-// returns the frequency of the closest note from the selected chord.
-// The function converts the root frequency to its MIDI note representation,
-// then finds the chord note (based on the selected chord's intervals) that is nearest
-// to the target frequency, and returns its frequency.
-// (A helper for chord locking.)
-float getClosestChordNote(float rootFreq, float targetFreq, int chordIndex)
-{
-    // Convert root frequency to MIDI note (using 69 for A4 = 440Hz)
-    float rootMidi = 69 + 12 * log2f(rootFreq / 440.0f);
-    // Get the nearest integer MIDI note for the root
-    int baseMidi = (int)roundf(rootMidi);
-    // For each interval in the chord, compute candidate MIDI notes relative to the root
-    float bestDiff = 1e6;
-    int bestMidi = baseMidi;
-    for (int i = 0; i < 3; i++)
-    {
-        int candidate = baseMidi + chords[chordIndex].intervals[i];
-        float candidateFreq = 440.0f * powf(2.0f, (candidate - 69) / 12.0f);
-        float diff = fabsf(candidateFreq - targetFreq);
-        if (diff < bestDiff)
-        {
-            bestDiff = diff;
-            bestMidi = candidate;
-        }
-    }
-    return 440.0f * powf(2.0f, (bestMidi - 69) / 12.0f);
-}
-
-// (The getScaleNote function is retained for legacy or other uses.)
-float getScaleNote(float rootFreq, float normalizedPosition, int scaleIndex)
-{
-    int scaleLength = SCALE_LENGTHS[scaleIndex];
-    int totalSteps = scaleLength * 3;
-    int step = (int)(normalizedPosition * totalSteps);
-    int octaveOffset = step / scaleLength - 1;
-    int scaleDegree = step % scaleLength;
-    int semitoneOffset = SCALES[scaleIndex][scaleDegree] + (octaveOffset * 12);
-    float frequencyRatio = powf(2.0f, semitoneOffset / 12.0f);
-    return rootFreq * frequencyRatio;
 }
