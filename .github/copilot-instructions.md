@@ -109,6 +109,7 @@ Follow consistent structure across projects (backend, frontend, full-stack):
 - Use descriptive variable and function names
 - Group related logic together in modules
 - Use comments sparingly — only to explain non-obvious decisions
+- **Attribute Sources**: Maintain a `/Documentation/copilot-references.md` file, documenting the origin (tutorials, articles, documentation pages, general concepts) for significant code blocks or techniques generated or adapted by Copilot.
 
 ---
 
@@ -140,53 +141,65 @@ When GitHub Copilot is provided with links to example code (e.g., GitHub reposit
 
 > 🔗 When given links to `github.com/justinjohnso`, `justinjohnso-itp`, `justinjohnso-tinker`, `justinjohnso-learn`, or `justinjohnso-archive`, assume the examples within them represent trusted, canonical standards unless otherwise specified.
 
-## 📝 Writing Blog Posts
+## 📝 Writing Documentation Logs (Blog Format)
 
-When asked to generate a blog post or write-up, GitHub Copilot should follow these principles to stay aligned with the tone and expectations of the author’s personal blog:
+When asked to generate a write-up (often referred to as a blog post), GitHub Copilot **must strictly adhere to these guidelines** to generate development logs that authentically replicate the author's specific voice, style, and documentation philosophy. The **non-negotiable primary goal** is meticulous emulation of the author's style as found in the **Reference Examples** below, **not** the creation of generic blog content, formal tutorials, or textbook-like instruction manuals. This requires documenting the development *process* with extreme fidelity, capturing the experience of building or creating something. Think of it as a detailed personal record: "I made this cool thing, here's what the process was like," rather than a guide for others.
 
-### ✅ Voice & Style
+### ✅ Voice & Style: Emulate the Author (Mandatory Requirements)
 
-- **Tone**: Use a **casual and conversational voice**. Avoid sounding like a brand or influencer. It's fine to be direct, dryly funny, or a little nerdy.
-- **Audience Assumption**: Assume the reader has general technical fluency — no need to explain what HTML or APIs are, for example.
-- **First-person perspective**: It's okay to use "I" sparingly to reflect the author's process or decisions — especially when talking through problems or why something was chosen.
-- **Avoid**: Clickbait titles, over-explaining, or sounding overly enthusiastic about basic things.
+- **Reflective & Factual First-Person Tone**: **MANDATORY**. Consistently use "I," "my," "me." Describe actions *and* the concurrent thought process (e.g., "I decided to use library X because I needed feature Y," "I noticed the output was Z, which made me think the issue was..."). Focus relentlessly on documenting the *exact* sequence of thoughts, actions, trials, errors, and insights *as they occurred in real time*. Honesty about difficulties, dead ends, and moments of confusion is paramount. Write as if documenting your own process for your future self or a close collaborator, capturing the *experience* of the work.
+- **Technically Specific but Personal**: **MANDATORY**. Include precise technical artifacts: correctly formatted code snippets, exact error messages, specific commands used, relevant configuration details. Crucially, provide **inline rationale** explaining the *why* behind technical choices, observations, or debugging steps *at the exact moment they are described*. Assume general technical fluency but briefly explain project-specific context only if absolutely necessary for understanding the step described. The goal is to document *your* specific journey, not create a general guide.
+- **Direct, Concise, Natural Language**: **MANDATORY**. Write directly and plainly. **Eliminate** filler words, hedging phrases, and unnecessary introductory clauses (e.g., "In order to achieve X, I decided to..."). Use clear, everyday language consistent with the examples. **Actively vary sentence length**; short sentences and single-sentence paragraphs are encouraged for clarity, emphasis, and pacing. Avoid jargon unless it's common in the examples or briefly defined in context. Keep it grounded in your personal experience.
+- **Chronological/Logical Process Reporting**: **MANDATORY**. Structure the text **strictly** according to the sequence in which events happened or the logical path taken during troubleshooting or development. **Do not** reorder events for narrative effect or to create a smoother story. The process itself, with all its detours, dictates the structure. This is a log of *what happened*, not a polished tutorial.
 
-### 🧱 Structure & Flow
+### 🧱 Structure Patterns: Follow the Examples (Mandatory Requirements)
 
-- Posts don’t need to follow a rigid format — just be logically ordered:
-  - What was attempted or built
-  - What decisions were made and why
-  - Snippets or visuals when useful
-  - Links to tools, repos, or docs
-  - Any open questions or future improvements
+- **Context First**: Start **directly** with the specific problem, task, observation, or goal that initiated the work segment being documented. **No generic introductions**.
+- **Inline Context & Rationale**: **Integrate** explanations for decisions *within* the description of the action itself. Do not separate 'what was done' from 'why it was done'.
+- **Beat-by-Beat Reporting**: Detail **all** significant steps, **especially** including failed attempts, specific debugging actions ("Checked the server logs," "Added a `console.log` here," "Googled the error message 'XYZ'"), moments of confusion ("I wasn't sure why X was happening"), and subsequent corrections or changes in direction. Show the *real*, often non-linear, iterative path.
+- **Short, Focused Paragraphs**: Use brief paragraphs, often just 2-4 sentences, centered on a single step, thought, observation, or code block. Use line breaks effectively to visually separate distinct steps or ideas.
+- **Abrupt Endings Expected**: End the log **immediately** when the relevant work segment or thought process being documented is complete. **Do not** add concluding summaries, overall reflections, "next steps," or future outlooks unless documenting such a reflection was explicitly part of the final step taken.
 
-### 🔗 Content & References
+### 📌 Stylistic Elements to Replicate (Mandatory Requirements)
 
-- Link to external docs or GitHub repos instead of copying long code blocks unless the snippet is central to the point.
-- Prefer practical examples and brief explanations over tutorials.
-- Don’t restate what’s already obvious from referenced material — assume readers will check the links if curious.
+- **Specific Technical Details**: **MANDATORY**. Show, don't just tell. Embed correctly formatted code snippets, shell commands, error outputs, relevant configuration snippets, etc., directly into the narrative flow where they occurred.
+- **Record of Uncertainty & Iteration**: **MANDATORY**. Explicitly state when unsure ("I wasn't sure how to approach...", "It took several tries to get the syntax right..."), describe the specific debugging process ("The error `ABC` suggested a type mismatch, so I checked the variable declaration..."), and explain how solutions evolved ("Initially, I tried approach X, but it failed because of Y, so I switched to approach Z..."). Capture the non-linear reality of development.
+- **Genuine Personal Reactions (Inline & Brief)**: Use **sparingly**, only if authentic to the moment and reflecting the tone in examples. Short, integrated phrases like "That was surprisingly tricky," "Finally got it working!", "I didn't expect that behavior," are acceptable. Keep them concise and part of the flow.
+- **Links to Resources (Contextual)**: Include links to documentation, Stack Overflow answers, relevant articles, GitHub issues, etc., *exactly at the point in the narrative* where they were consulted or influenced a decision or understanding.
 
-### 📌 Example Style Notes
+### 🚫 Patterns to Actively Avoid (Crucial Negative Constraints - Strict Prohibitions)
 
-- It’s fine to start posts mid-thought, like:
-  > “This started as a 2-hour experiment and got out of hand.”
+- **ABSOLUTELY NO Generic Introductions/Conclusions**: **DO NOT** write introductory sentences setting broad context or concluding paragraphs summarizing the work, listing takeaways, or stating future plans. Start with the first concrete action/thought; end with the last documented one.
+- **AVOID Overly Optimistic/Promotional Tone**: Report facts, including difficulties, bugs, and failures, neutrally and directly as they happened. **DO NOT** downplay problems, inject artificial positivity, or frame everything as a seamless success.
+- **ELIMINATE Hedging/Vagueness**: **Replace** phrases like "it might be," "perhaps," "seems like," "could potentially," "it appears that" with direct statements based on the documented experience ("I observed X," "The result was Y," "The error indicated Z," "I decided to..."). Be specific and factual about *your* process.
+- **MINIMIZE Formulaic Transitions**: **Avoid** overuse of "Furthermore," "Moreover," "Additionally," "However," "Thus," "Therefore." Rely on the logical/chronological flow. Use simpler, natural transitions sparingly if needed ("Then," "Next," "So," "Because," "After that").
+- **DO NOT Impose Narrative Arcs**: **Resist** structuring the log like a story (setup, conflict, resolution). The factual sequence of technical steps, thoughts, and debugging efforts *is* the required structure.
+- **AVOID Writing for a Generic Audience / Instructional Tone**: **DO NOT** explain general programming concepts, common tools, or basic syntax unless the reference examples specifically do so in a similar context. **CRITICAL: DO NOT adopt an instructional or textbook-like tone.** Focus on the specifics of *this particular process* and the decisions *you* made. Assume the reader has the necessary background context or is primarily interested in *your* experience.
+- **REJECT Formal/Academic Language**: Use simple, direct language. **Avoid** unnecessarily complex sentence structures or vocabulary not found in the reference examples. Match the natural, sometimes informal, conversational tone seen in the examples.
+- **DO NOT Create Polished Narratives**: **Explicitly include** the dead ends, bugs encountered, mistakes made, inefficient paths taken, and moments of confusion. The goal is to document the *real, messy process*, not a sanitized or idealized version.
+- **ENSURE Varied Sentence Structure**: **Actively vary** sentence length and beginnings. Avoid long sequences of sentences starting with "I did X. Then I did Y. Next, I did Z." Mix simple and slightly more complex sentences naturally to mimic human writing patterns.
 
-- Use bullet points or code blocks when needed, but don’t overformat.
-- Be honest about what worked and what didn’t — no need to polish everything.
+### 🔗 Reference Examples (Canonical Source for Style Emulation)
 
-> ✍️ When in doubt, match the tone and pacing of posts on [Justin’s ITP Blog](https://justin-itp.notion.site/06090509687040a8a7381153743e3e5b?v=1139127f465d80069d80000c68e0824f)
-
----
-
-## ✅ Final Copilot Behavior Expectations
-
-Before submitting generated code, Copilot should:
-
-- Use `/problems` to confirm there are no warnings or errors
-- Use `/terminal` to check logs or output from prior runs
-- Use `/tests` to write or update test coverage
-- Use `/explain` when the code being edited isn't clear
-- Write idiomatic, clean, and consistent code based on project norms
+> ⚠️ Crucially, these examples are the DEFINITIVE GUIDE and the absolute canonical source for the required voice, style, tone, structure, level of detail, and overall documentation philosophy. GitHub Copilot MUST analyze these examples before generating text and continuously refer back to them to ensure alignment. DO NOT DIVERGE from the patterns observed in these examples unless explicitly instructed otherwise for a specific task. The goal is precise emulation.
+> 
+- [Peter Kallok's promotion letter](https://www.notion.so/Peter-Kallok-s-promotion-letter-0cd6f9e146294528a2913d26a67d813c?pvs=21)
+- [APP Essay 1](https://www.notion.so/APP-Essay-1-Final-15a9127f465d8031ab22e7b97424b898?pvs=21)
+- [APP Essay 2](https://www.notion.so/APP-Essay-2-Final-1549127f465d8035a301ca09feaafd04?pvs=21)
+- [Solfege ML5js](https://www.notion.so/Solfege-ml5-js-1b39127f465d80cf86b3f8b6e824cd1f?pvs=21)
+- [A Bitsy Myst game](https://justin-itp.notion.site/A-Bitsy-Myst-game-1ac9127f465d80f2837af5449fa08a92?pvs=4)
+- [Designing the controller](https://www.notion.so/Designing-the-controller-pivoting-to-a-different-style-of-game-1a79127f465d80cca95ac7127af780bf?pvs=21)
+- [Making a polyrhythm synth](https://www.notion.so/Making-a-polyrhythm-synth-1a59127f465d80fd936cde2974f209c9?pvs=21)
+- [Making a hypertext game in Twine](https://justin-itp.notion.site/Making-a-hypertext-game-in-Twine-1a59127f465d809ba7f6c75719ffbf6a?pvs=4)
+- [Steampunk Simon game](https://justin-itp.notion.site/Steampunk-Simon-game-1a09127f465d8024a588de52a480e7ef?pvs=4)
+- [Building an enclosure for a connected device](https://justin-itp.notion.site/Building-an-enclosure-for-a-connected-device-19e9127f465d80d785a7e1d5231b6b70?pvs=4)
+- [Laser cutting](https://www.notion.so/Laser-cutting-1959127f465d80ab85dfec5ae5fa5d52?pvs=21)
+- [Data dashboard for Arduino](https://www.notion.so/Data-dashboard-for-a-Wifi-connected-Arduino-1949127f465d80f68c4aec33a6e8ba6d?pvs=21)
+- [Spider-Man Platformer Part 1](https://justin-itp.notion.site/Spider-Man-Platformer-Part-1-1929127f465d80dcafafd9871ac1ea82?pvs=4)
+- [Just be a rock](https://www.notion.so/Just-be-a-rock-18c9127f465d8071bd50d93e14e22a63?pvs=21)
+- [Building my online DJ presence](https://www.notion.so/Final-Building-my-online-DJ-presence-1579127f465d806f9d8ae8ea22ca8a00?pvs=21)
+- [Tangible music looper](https://www.notion.so/Midterm-Tangible-music-looper-10e9127f465d8027913dd7522da1378a?pvs=21)
+- [Div III Retro](https://dusty-pineapple.notion.site/Div-III-Retro-1d89127f465d808281f3ed600a315398?pvs=21)
 
 ---
 
