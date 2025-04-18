@@ -216,32 +216,46 @@ void loop() {
     // Only read from sensors that were successfully configured
     if (sensorConfigured[i]) {
         uint8_t channel = i; // Channel index matches the loop index 'i'
-        byte currentAddr = newAddresses[i];
+        // byte currentAddr = newAddresses[i]; // Not needed for printing anymore
 
         selectChannel(channel);
 
+        // Check if data is ready for the current sensor
+        delay(1); // Small delay before checking data readiness
         if (myImagers[i].isDataReady()) {
+          // Get the data
           if (myImagers[i].getRangingData(&measurementData)) {
-            Serial.print("\n--- Sensor slot ");
+            // Start the Teleplot line for this sensor's zones
+            Serial.print(">s");
             Serial.print(i);
-            Serial.print(" (Ch:"); Serial.print(channel);
-            Serial.print("/Addr:0x"); Serial.print(currentAddr, HEX);
-            Serial.println(") ---");
-            Serial.println("Distance (mm):");
+            Serial.print("_zones:"); // Variable name includes sensor index
 
+            // Iterate through each zone (pixel) and print values on the same line
             for (int j = 0; j < SENSOR_RESOLUTION; j++) {
               Serial.print(measurementData.distance_mm[j]);
-              Serial.print("\t");
-              if ((j + 1) % IMAGE_WIDTH == 0) {
-                Serial.println();
+              // Add a space separator between values, but not after the last one
+              if (j < SENSOR_RESOLUTION - 1) {
+                Serial.print(" ");
               }
             }
+            // End the line after printing all zone values for this sensor
+            Serial.println();
+
           } else {
-              Serial.print("Error getting data from Sensor slot ");
-              Serial.println(i);
+              // Error getting data
+              Serial.print("!ERR: Sensor slot ");
+              Serial.print(i);
+              Serial.println(" getRangingData failed");
           }
         }
+        // else {
+            // Optional: Indicate if data wasn't ready
+            // Serial.print("!WARN: Sensor slot ");
+            // Serial.print(i);
+            // Serial.println(" data not ready");
+        // }
     }
   }
-  delay(50);
+  // Adjust delay as needed
+  delay(10);
 }
