@@ -12,7 +12,7 @@ const int MAX_SENSORS = 8; // Maximum possible sensors we might configure arrays
 const int SENSOR_RESOLUTION = 16; // 4x4 = 16 zones
 // const int SENSOR_RESOLUTION = 64; // 8x8 = 64 zones
 const int IMAGE_WIDTH = (SENSOR_RESOLUTION == 16) ? 4 : 8;
-const int RANGING_FREQUENCY_HZ = 15; // Max 15Hz for 8x8, 60Hz for 4x4
+const int RANGING_FREQUENCY_HZ = 60; // Max 15Hz for 8x8, 60Hz for 4x4 (Increased to 60Hz)
 
 // Define the multiplexer channels to check.
 // We'll iterate through these indices. If you only have 6 sensors,
