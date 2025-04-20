@@ -2,7 +2,7 @@
 #include <Wire.h>
 #include "SparkFun_VL53L5CX_Library.h"
 #include "Adafruit_NeoPixel.h"
-#include "TCA9548.h"
+#include <SparkFun_I2C_Mux_Arduino_Library.h>
 
 // Define LEDs
 #define LED_PIN_SENSOR_A1  2
@@ -44,29 +44,35 @@ const byte newAddresses[MAX_SENSORS] = {
     NEW_ADDRESS_4, NEW_ADDRESS_5, NEW_ADDRESS_6, NEW_ADDRESS_7
 };
 const byte DEFAULT_ADDRESS = 0x29; // Default address of the VL53L5CX
-const byte TCA_ADDRESS = 0x70; // Default address for TCA9548A
+const byte TCA_ADDRESS = 0x70; // Default address for Qwiic Mux
 
 // --- Global Objects ---
-TCA9548 tca(TCA_ADDRESS);
+QWIICMUX qwiicMux; // Correct class name based on examples
 SparkFun_VL53L5CX myImagers[MAX_SENSORS];
-VL53L5CX_ResultsData measurementData;        
+VL53L5CX_ResultsData measurementData;
 bool sensorConfigured[MAX_SENSORS] = {false};
 
-// Helper function to select TCA channel
+// Helper function to select Mux channel/port
 void selectChannel(uint8_t channel) {
   if (channel >= 8) {
-    Serial.print("Error: Invalid TCA channel ");
+    Serial.print("Error: Invalid Mux channel ");
     Serial.println(channel);
     return;
   }
-  tca.selectChannel(channel);
-  delay(10);
+
+  // Use setPort() as shown in basic library examples
+  if (!qwiicMux.setPort(channel)) {
+      Serial.print("Error: Failed to set Mux port to ");
+      Serial.println(channel);
+      // Consider adding error handling here if needed
+  }
+  delay(10); // Keep delay for stability after switching ports
 }
 
 void setup() {
   Serial.begin(115200);
   while (!Serial);
-  Serial.println("Nano 33 IoT - TCA9548 (Rob Tillaart) & VL53L5CX Address Setting");
+  Serial.println("Nano 33 IoT - SparkFun Qwiic Mux & VL53L5CX Address Setting");
 
   Wire.begin();
 
@@ -79,15 +85,20 @@ void setup() {
   sensorRingB3.begin();
 
   // Initialize Multiplexer
-  Serial.println("Looking for TCA9548...");
-  tca.begin();
-  if (!tca.isConnected()) {
-    Serial.print("TCA9548 not found at address 0x");
-    Serial.println(TCA_ADDRESS, HEX);
+  Serial.println("Looking for Qwiic Mux...");
+  // Call begin() without arguments to use default Wire and address (0x70)
+  if (!qwiicMux.begin()) { // Corrected call based on examples
+    Serial.print("Qwiic Mux not found at default address 0x");
+    Serial.println(TCA_ADDRESS, HEX); // Print the defined default address constant
     Serial.println("Check wiring. Freezing...");
     while (1);
   }
-  Serial.println("TCA9548 found.");
+  // Optional: Check connection explicitly after begin()
+  if (!qwiicMux.isConnected()) {
+      Serial.println("Qwiic Mux connected but isConnected() returned false. Freezing...");
+      while(1);
+  }
+  Serial.println("Qwiic Mux found and connected.");
 
   // --- Set Unique I2C Addresses ---
   Serial.println("\nAttempting to set unique I2C addresses...");
@@ -244,36 +255,21 @@ void loop() {
         uint8_t channel = i;
         selectChannel(channel);
 
-        delay(1);
+        delay(1); // Small delay might be needed for sensor readiness
         if (myImagers[i].isDataReady()) {
           if (myImagers[i].getRangingData(&measurementData)) {
-            // Send sensor data to Daisy
-            Serial.print("S"); // Start marker
-            Serial.print(i);   // Sensor index
-            Serial.print(":");
-            
-            // Send all zone values for this sensor
+            // Send sensor data to Daisy, one line per zone, Teleplot-friendly
             for (int j = 0; j < SENSOR_RESOLUTION; j++) {
-              Serial.print(measurementData.distance_mm[j]);
-              if (j < SENSOR_RESOLUTION - 1) {
-                Serial.print(",");
-              }
+              Serial.print(">S"); // Teleplot marker + Sensor marker
+              Serial.print(i);    // Sensor index
+              Serial.print("Z");  // Zone marker
+              Serial.print(j);    // Zone index
+              Serial.print(":");
+              Serial.println(measurementData.distance_mm[j]); // Value and newline
             }
-            Serial.println("E"); // End marker
-
-            Serial.print(">s");
-            Serial.print(i);
-            Serial.print("_zones:");
-            for (int j = 0; j < SENSOR_RESOLUTION; j++) {
-              Serial.print(measurementData.distance_mm[j]);
-              if (j < SENSOR_RESOLUTION - 1) {
-                Serial.print(" ");
-              }
-            }
-            Serial.println();
           }
         }
     }
   }
-  delay(10);
+  delay(10); // Delay between full sensor scans
 }

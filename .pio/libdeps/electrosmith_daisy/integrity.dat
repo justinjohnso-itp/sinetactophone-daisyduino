@@ -1,5 +1,6 @@
+adafruit/Adafruit NeoPixel@^1.12.5
+sparkfun/SparkFun VL53L5CX Arduino Library@^1.0.3
 robtillaart/TCA9548@^0.3.0
-adafruit/Adafruit NeoPixel @ ^1.12.0
-https://github.com/electro-smith/DaisyDuino.git
-sparkfun/SparkFun VL53L5CX Arduino Library
+sparkfun/SparkFun I2C Mux Arduino Library@^1.0.3
 Wire
+https://github.com/electro-smith/DaisyDuino.git
