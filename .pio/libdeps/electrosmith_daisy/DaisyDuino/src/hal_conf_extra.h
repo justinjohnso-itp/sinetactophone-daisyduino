@@ -3,6 +3,8 @@
 #define HAL_SDRAM_MODULE_ENABLED
 #define HAL_DMA_MODULE_ENABLED
 #define HAL_MDMA_MODULE_ENABLED
+#define HAL_QSPI_MODULE_ENABLED
+#define HAL_SD_MODULE_ENABLED
 #define INSTRUCTION_CACHE_ENABLE
 
 // In order for the Cache to work and still allow the DMA to work 
@@ -23,5 +25,5 @@
 */
 
 // Once that is added we can repalce
-//#define DATA_CACHE_ENABLE
+#define DATA_CACHE_ENABLE
 

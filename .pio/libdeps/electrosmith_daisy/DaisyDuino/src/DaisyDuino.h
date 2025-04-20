@@ -12,6 +12,7 @@
 #include "daisy_petal.h"
 #include "daisy_pod.h"
 #include "daisy_patch_sm.h"
+#include "PersistentStorage.h"
 
 #include "utility/ctrl.h"
 #include "utility/encoder.h"
@@ -121,6 +122,9 @@ public:
 
   // process boths
   void ProcessAllControls();
+
+  // Reset the hardware in bootloader mode
+  void ResetToBootloader();
 
 private:
   void InitPod(float control_update_rate);

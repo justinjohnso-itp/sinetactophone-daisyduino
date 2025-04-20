@@ -10,7 +10,7 @@
 
 ## Getting Started
 
-Follow the instructions in our [Getting Started Wiki page.](https://github.com/electro-smith/DaisyWiki/wiki/1a.-Getting-Started-(Arduino-Edition)) 
+Follow the instructions in our [Getting Started page.](https://daisy.audio/tutorials/arduino-dev-env/) 
 
 ## Support
 
@@ -20,7 +20,7 @@ Here are some ways to get support and connect with other users and developers:
 
 - Make a [GitHub Issue](https://github.com/electro-smith/DaisyDuino/issues) 
 
-- Join the [Daisy Slack Workspace](https://join.slack.com/t/es-daisy/shared_invite/zt-f9cfm1g4-DgdCok1h1Rj4fpX90~IOww)
+- Join the [Daisy Discord](https://discord.gg/qPPfHczSZV)
 
 ## Built With
 
@@ -32,10 +32,10 @@ Here are some ways to get support and connect with other users and developers:
 
 MIDI examples require the [FortySevenEffects MIDI Library](https://github.com/FortySevenEffects/arduino_midi_library). This library can be installed within the Arduino Library Manager.
 
-## Contributing
-
-Please read our [Contribution Guidelines](https://github.com/electro-smith/DaisyWiki/wiki/6.-Contribution-Guidelines) for details on how to get involved!
-
 ## License
 
-This project uses multiple open source licenses for different files - see the [LICENSE.md](LICENSE.md) file for details
+DaisyDuino is licensed with the permissive MIT open source license.
+
+This allows for modification and reuse in both commercial and personal projects. It does not provide a warranty of any kind.
+
+For the full license, read the LICENSE file in the root directory.
