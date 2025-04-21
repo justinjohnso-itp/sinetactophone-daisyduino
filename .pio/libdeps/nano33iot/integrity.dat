@@ -1,6 +1,6 @@
-sparkfun/SparkFun VL53L5CX Arduino Library@^1.0.3
-sparkfun/SparkFun I2C Mux Arduino Library@^1.0.3
-Wire
-adafruit/Adafruit NeoPixel@^1.12.5
 robtillaart/TCA9548@^0.3.0
+Wire
 adafruit/Adafruit_VL53L0X@^1.2.4
+sparkfun/SparkFun I2C Mux Arduino Library@^1.0.3
+sparkfun/SparkFun VL53L5CX Arduino Library@^1.0.3
+adafruit/Adafruit NeoPixel@^1.12.5

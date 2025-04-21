@@ -1,91 +1,67 @@
-#include <DaisyDuino.h>
-#include <string.h>
+#include <Arduino.h>
+#include <Wire.h> // optional
+#include "DaisyDuino.h"
+#include <string.h> // optional
 
-DaisyHardware hardware;
-size_t numChannels;
-float sampleRate;
+uint32_t rx3 = 30, tx3 = 29;
+HardwareSerial NanoSerial(rx3, tx3); 
+#define SERIAL_BAUD_RATE 115200
+#define VOLUME_KNOB_PIN A0   // ← define volume knob pin
 
-// Create audio objects
-static void AudioCallback(float **in, float **out, size_t size) {
-    for (size_t i = 0; i < size; i++) {
-        // Process audio here
-        out[0][i] = in[0][i];
-        out[1][i] = in[1][i];
-    }
-}
+DaisyHardware     hw;
+size_t            num_channels;
+static Oscillator osc;
+float             volumeLevel; // ← new global for volume
 
-const int MAX_SENSORS = 8;
-const int SENSOR_RESOLUTION = 16;
-int sensorData[MAX_SENSORS][SENSOR_RESOLUTION];
-
-void setup() {
-    // Initialize Daisy hardware
-    sampleRate = DAISY.get_samplerate();
-    numChannels = 2; // Stereo
-
-    hardware = DAISY.init(DAISY_SEED, AUDIO_SR_48K);
-    DAISY.begin(AudioCallback);
-
-    // Initialize Serial for sensor data
-    Serial.begin(115200);
-    while (!Serial) delay(10);
-    Serial.println("Daisy Receiver Ready");
-    
-    // Initialize sensor data array
-    for (int i = 0; i < MAX_SENSORS; i++) {
-        for (int j = 0; j < SENSOR_RESOLUTION; j++) {
-            sensorData[i][j] = 0;
-        }
-    }
-}
-
-void parseData(String data) {
-  // Expected format: "S{sensor_index}:{value1},{value2},...E"
-  if (data.length() < 4) return; // Minimum valid length
-  
-  if (data.charAt(0) != 'S' || data.charAt(data.length()-1) != 'E') return;
-  
-  // Extract sensor index
-  int colonPos = data.indexOf(':');
-  if (colonPos == -1) return;
-  
-  int sensorIndex = data.substring(1, colonPos).toInt();
-  if (sensorIndex >= MAX_SENSORS) return;
-  
-  // Extract values
-  String values = data.substring(colonPos + 1, data.length() - 1);
-  int valueIndex = 0;
-  int lastComma = -1;
-  
-  // Parse comma-separated values
-  for (int i = 0; i < values.length(); i++) {
-    if (values.charAt(i) == ',' || i == values.length() - 1) {
-      int endPos = (i == values.length() - 1) ? i + 1 : i;
-      String valueStr = values.substring(lastComma + 1, endPos);
-      if (valueIndex < SENSOR_RESOLUTION) {
-        sensorData[sensorIndex][valueIndex] = valueStr.toInt();
-      }
-      valueIndex++;
-      lastComma = i;
+void MyCallback(float **in, float **out, size_t size) {
+  // update osc parameters each callback
+  osc.SetFreq(300.0f);
+  osc.SetAmp(volumeLevel);  // ← use volumeLevel here
+  for (size_t i = 0; i < size; i++) {
+    float sig = osc.Process();
+    for (size_t chn = 0; chn < num_channels; chn++) {
+      out[chn][i] = sig;
     }
   }
 }
 
-void loop() {
-  if (Serial.available() > 0) {
-    String incomingData = Serial.readStringUntil('\n');
-    if (incomingData.startsWith("S") && incomingData.endsWith("E")) {
-      parseData(incomingData);
-      
-      // Debug: Print received data
-      Serial.print("Received data for sensor ");
-      Serial.print(incomingData.substring(1, incomingData.indexOf(':')));
-      Serial.println();
-    }
+void setup(){
+  Serial.begin(SERIAL_BAUD_RATE);
+  Serial.println("--- Daisy Serial Relay ---");
+  Serial.println("USB Monitor Initialized.");
+
+  NanoSerial.begin(SERIAL_BAUD_RATE);
+  Serial.println("Hardware NanoSerial (Nano RX/TX) Initialized.");
+  Serial.print("Listening for Nano on NanoSerial (Pins D13/D14) at ");
+  Serial.print(SERIAL_BAUD_RATE);
+  Serial.println(" baud...");
+
+  // audio init
+  hw = DAISY.init(DAISY_SEED, AUDIO_SR_48K);
+  num_channels = hw.num_channels;
+  osc.Init(DAISY.get_samplerate());
+  osc.SetWaveform(Oscillator::WAVE_TRI);
+
+  // configure knobs
+  pinMode(VOLUME_KNOB_PIN, INPUT_ANALOG);
+
+  // read initial knob values
+  volumeLevel = analogRead(VOLUME_KNOB_PIN) / 1023.0f;  // ← init volume
+
+  DAISY.begin(MyCallback);
+}
+
+void loop(){
+  // Check if data is available from the Nano on NanoSerial
+  if (NanoSerial.available() > 0) {
+    String incomingData = NanoSerial.readStringUntil('\n');
+    incomingData.trim();
+
+    Serial.print("Nano->Daisy: ");
+    Serial.println(incomingData);
   }
 
-  // Process the sensor data here
-  // Example: Access data using sensorData[sensor_index][zone_index]
-  
-  delay(1);
+  // update knobs every loop
+  volumeLevel = analogRead(VOLUME_KNOB_PIN) / 1023.0f;
+  Serial.println(volumeLevel);
 }
