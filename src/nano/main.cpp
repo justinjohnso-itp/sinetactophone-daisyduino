@@ -79,17 +79,25 @@ int prevDistance[MAX_SENSORS] = {0};
 
 // Combined configuration for all sensors - channels, LED rings, colors, and descriptions
 // Physical layout:
-// - Side A (D5-D7): Warm/earth tones
-// - Side B (D2-D4): Cool tones
+// - Side A (D2-D4): Cool tones
+// - Side B (D5-D7): Warm/earth tones
 const SensorConfig sensorConfigs[MAX_SENSORS] = {
-    {0, &sensorRingB3, 5461,  "D7", "ToF 0 -> LED D7 (warm: yellow-orange)"},
+    // Sensor 0 -> LED D7 (Warm: Yellow-Orange)
+    {0, &sensorRingB3, 5461,  "D7", "ToF 0 -> LED D7"},
+    // Sensor 1 -> No LED
     {1, nullptr,       0,     "",   "ToF 1 (not used)"},
+    // Sensor 2 -> No LED
     {2, nullptr,       0,     "",   "ToF 2 (not used)"},
-    {3, &sensorRingB1, 0,     "D5", "ToF 3 -> LED D5 (warm: red)"}, 
-    {4, &sensorRingA3, 54613, "D4", "ToF 4 -> LED D4 (cool: magenta)"},
-    {5, &sensorRingA2, 49151, "D3", "ToF 5 -> LED D3 (cool: blue-purple)"},
-    {6, &sensorRingA1, 43690, "D2", "ToF 6 -> LED D2 (cool: blue)"},
-    {7, &sensorRingB2, 10922, "D6", "ToF 7 -> LED D6 (warm: green)"}
+    // Sensor 3 -> LED D5 (Warm: Red)
+    {3, &sensorRingB1, 0,     "D5", "ToF 3 -> LED D5"}, 
+    // Sensor 4 -> LED D4 (Cool: Magenta)
+    {4, &sensorRingA3, 54613, "D4", "ToF 4 -> LED D4"},
+    // Sensor 5 -> LED D3 (Cool: Blue-Purple)
+    {5, &sensorRingA2, 49151, "D3", "ToF 5 -> LED D3"},
+    // Sensor 6 -> LED D2 (Cool: Blue)
+    {6, &sensorRingA1, 43690, "D2", "ToF 6 -> LED D2"},
+    // Sensor 7 -> LED D6 (Warm: Green)
+    {7, &sensorRingB2, 10922, "D6", "ToF 7 -> LED D6"}
 };
 
 // Helper function to select Mux channel/port
@@ -108,7 +116,7 @@ void selectChannel(uint8_t channel) {
     Serial1.print("Error: Failed to set Mux port to ");
     Serial1.println(channel);
   }
-  delay(10); // Small delay for stability after switching ports
+  delay(1); // Reduced delay for MUX stability
 }
 
 // Animation constants
@@ -261,7 +269,7 @@ void setup() {
     Serial1.print(" to Address 0x"); Serial1.println(newAddr, HEX);
 
     selectChannel(channel);
-    delay(50);
+    delay(5); // Reduced delay after selecting channel for address check
 
     Wire.beginTransmission(newAddr);
     byte error = Wire.endTransmission();
@@ -294,7 +302,7 @@ void setup() {
                 Serial.print("    Scan error "); Serial.print(scanError); Serial.print(" at address 0x"); Serial.println(scanAddr, HEX);
                 Serial1.print("    Scan error "); Serial1.print(scanError); Serial1.print(" at address 0x"); Serial1.println(scanAddr, HEX);
             }
-            delay(2); // Small delay between scan attempts
+            delay(1); // Reduced delay between scan attempts
         }
 
         // Process scan results
@@ -306,7 +314,6 @@ void setup() {
             if (myImagers[channel].begin(foundAddr) == false) {
                 Serial.println("  Failed to initialize sensor at found address. Skipping channel."); // Log to USB Serial
                 Serial1.println("  Failed to initialize sensor at found address. Skipping channel."); // Log to Hardware Serial1
-                delay(500); // Delay to allow reading the error
                 continue;
             }
             Serial.println("  Sensor initialized at found address."); // Log to USB Serial
@@ -319,13 +326,12 @@ void setup() {
             if (myImagers[channel].setAddress(newAddr) == false) {
                 Serial.println("  Failed to set new I2C address. Skipping channel."); // Log to USB Serial
                 Serial1.println("  Failed to set new I2C address. Skipping channel."); // Log to Hardware Serial1
-                delay(500); // Delay to allow reading the error
                 continue;
             }
             Serial.println("  New address set successfully."); // Log to USB Serial
             Serial1.println("  New address set successfully."); // Log to Hardware Serial1
             sensorConfigured[channel] = true; // Mark as configured with the new address
-            delay(50); // Allow time for address change to settle
+            delay(5); // Reduced delay after setting address
 
         } else if (devicesFound == 0) {
             Serial.println("  No sensor found on this channel during scan. Skipping channel."); // Log to USB Serial
@@ -334,7 +340,6 @@ void setup() {
         } else { // devicesFound > 1
             Serial.println("  Multiple devices found on this channel! Check wiring. Skipping channel."); // Log to USB Serial
             Serial1.println("  Multiple devices found on this channel! Check wiring. Skipping channel."); // Log to Hardware Serial1
-            delay(500); // Delay to allow reading the error
             continue;
         }
     }
@@ -360,7 +365,7 @@ void setup() {
         Serial1.print(") at Address 0x"); Serial1.println(currentAddr, HEX);
 
         selectChannel(channel); // Select the correct channel before talking to the sensor
-        delay(50); // Allow mux to switch and sensor to be ready
+        delay(5); // Reduced delay after selecting channel for initialization
 
         // Initialize the sensor object with its new address
         if (myImagers[i].begin(currentAddr) == false) {
@@ -405,7 +410,6 @@ void loop() {
     
     uint8_t channel = i;
     selectChannel(channel);
-    delay(5); // Small delay for mux to switch
     
     if (myImagers[i].isDataReady()) {
       if (myImagers[i].getRangingData(&measurementData)) {
@@ -455,6 +459,4 @@ void loop() {
       sensorConfigs[i].ledRing->show();
     }
   }
-  
-  delay(10); // Small delay between loops for stability
 }

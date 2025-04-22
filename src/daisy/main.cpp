@@ -134,7 +134,7 @@ void setup(){
       osc[i].Init(samplerate);
       osc[i].SetAmp(0.0f); // Start silent
       osc[i].SetFreq(mtof(currentOctave * 12)); // Start at base octave freq
-      osc[i].SetWaveform(Oscillator::WAVE_SIN); // Use Sine waves
+      osc[i].SetWaveform(Oscillator::WAVE_TRI); // <-- Use Triangle waves
   }
 
   // Read initial volume
@@ -175,8 +175,8 @@ void loop(){
           sensorValues[sensorId] = firstValStr.toInt();
 
           // Optional: Print parsed value
-          Serial.print("Parsed Sensor "); Serial.print(sensorId);
-          Serial.print(" value: "); Serial.println(sensorValues[sensorId]);
+          // Serial.print("Parsed Sensor "); Serial.print(sensorId);
+          // Serial.print(" value: "); Serial.println(sensorValues[sensorId]);
       }
     }
   }
@@ -189,14 +189,14 @@ void loop(){
   // 1. Determine Scale (Sensors 5 & 0 - Middle sensors of each half)
   // Consider a value > 0 and < MAX_DETECTION_RANGE as detection
   bool detect5 = sensorValues[5] > 0 && sensorValues[5] < MAX_DETECTION_RANGE;
-  bool detect0 = sensorValues[7] > 0 && sensorValues[7] < MAX_DETECTION_RANGE;
+  bool detect0 = sensorValues[7] > 0 && sensorValues[7] < MAX_DETECTION_RANGE; // <-- Corrected sensor index for Half B middle
 
   int previousScale = currentScale; // Store previous scale to check for changes
 
   if (detect5 && detect0) {
-      currentScale = 9; // Blues scale index (Both middle sensors active)
+      currentScale = 1; // Minor scale index (Both middle sensors active)
   } else if (detect5 || detect0) {
-      currentScale = 1; // Minor scale index (One middle sensor active)
+      currentScale = 9; // Blues scale index (One middle sensor active)
   } else {
       currentScale = 0; // Major scale index (Neither middle sensor active)
   }
@@ -208,19 +208,20 @@ void loop(){
   }
 
 
-  // 2. Update Oscillator 0 (Half A: Amp=Sensor 4, Pitch=Sensor 6) - Shifted +1 Octave
+  // 2. Update Oscillator 0 (Half A: Amp=Sensor 4, Pitch=Sensor 6) - Shifted -0.5 Octave
   float ampControl0 = mapSensorDistance(sensorValues[4]); // Left sensor for Amp
   float pitchControl0 = mapSensorDistance(sensorValues[6]); // Right sensor for Pitch
   int midiNote0 = calculateMidiNote(pitchControl0);
-  midiNote0 += 12; // Shift up one octave (12 semitones)
+  midiNote0 -= 6; // Shift down half an octave (6 semitones)
   float freq0 = mtof(midiNote0); // Convert final MIDI note to frequency
   osc[0].SetAmp(ampControl0);
   osc[0].SetFreq(freq0);
 
-  // 3. Update Oscillator 1 (Half B: Amp=Sensor 3, Pitch=Sensor 7)
+  // 3. Update Oscillator 1 (Half B: Amp=Sensor 3, Pitch=Sensor 0) - Shifted -0.5 Octave
   float ampControl1 = mapSensorDistance(sensorValues[3]); // Left sensor for Amp
   float pitchControl1 = mapSensorDistance(sensorValues[0]); // Right sensor for Pitch
   int midiNote1 = calculateMidiNote(pitchControl1);
+  midiNote1 -= 6; // Shift down half an octave (6 semitones)
   float freq1 = mtof(midiNote1); // Convert MIDI note to frequency
   osc[1].SetAmp(ampControl1);
   osc[1].SetFreq(freq1);
