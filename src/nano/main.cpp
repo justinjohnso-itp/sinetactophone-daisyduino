@@ -28,10 +28,7 @@ const int SENSOR_RESOLUTION = 16;
 const int IMAGE_WIDTH = (SENSOR_RESOLUTION == 16) ? 4 : 8;
 const int RANGING_FREQUENCY_HZ = 20;
 
-// Define the multiplexer channels to check.
-const uint8_t sensorChannels[NUM_CHANNELS_TO_CHECK] = {0, 1, 2, 3, 4, 5, 6, 7};
-
-// Define new unique I2C addresses to potentially assign for each channel slot
+// Define unique I2C addresses to assign for each channel slot
 const byte NEW_ADDRESS_0 = 0x30;
 const byte NEW_ADDRESS_1 = 0x31;
 const byte NEW_ADDRESS_2 = 0x32;
@@ -43,6 +40,15 @@ const byte NEW_ADDRESS_7 = 0x37;
 const byte newAddresses[MAX_SENSORS] = {
     NEW_ADDRESS_0, NEW_ADDRESS_1, NEW_ADDRESS_2, NEW_ADDRESS_3,
     NEW_ADDRESS_4, NEW_ADDRESS_5, NEW_ADDRESS_6, NEW_ADDRESS_7
+};
+
+// Sensor configuration structure to keep all sensor-related mappings in one place
+struct SensorConfig {
+    uint8_t channel;                 // Multiplexer channel
+    Adafruit_NeoPixel* ledRing;      // Pointer to LED ring (nullptr if not used)
+    uint16_t color;                  // HSV hue value for animation
+    const char* ledPin;              // Physical pin description
+    const char* description;         // Human-readable description
 };
 const byte DEFAULT_ADDRESS = 0x29; // Default address of the VL53L5CX
 const byte TCA_ADDRESS = 0x70; // Default address for Qwiic Mux
@@ -70,31 +76,20 @@ uint16_t animationPhase[MAX_SENSORS] = {0};
 int animationSpeed[MAX_SENSORS] = {0};
 bool isActive[MAX_SENSORS] = {false};
 int prevDistance[MAX_SENSORS] = {0};
- 
-// Maps each ToF sensor index to its corresponding LED ring
-Adafruit_NeoPixel* sensorRings[MAX_SENSORS] = {
-  &sensorRingB3, // ToF 0 -> LED D7
-  nullptr,       // ToF 1 (not used)
-  nullptr,       // ToF 2 (not used)
-  &sensorRingB1, // ToF 3 -> LED D5
-  &sensorRingA3, // ToF 4 -> LED D4
-  &sensorRingA2, // ToF 5 -> LED D3
-  &sensorRingA1, // ToF 6 -> LED D2
-  &sensorRingB2  // ToF 7 -> LED D6
-};
 
-// LED animation colors (HSV hue values) - based on physical layout
-// D5-D7 (physical side A): Warm/earth tones
-// D2-D4 (physical side B): Cool tones
-const uint16_t ringColors[MAX_SENSORS] = {
-  5461,   // ToF 0 -> LED D7 (warm: yellow-orange)
-  0,      // ToF 1 (not used)
-  0,      // ToF 2 (not used)
-  0,      // ToF 3 -> LED D5 (warm: red)
-  54613,  // ToF 4 -> LED D4 (cool: magenta)
-  49151,  // ToF 5 -> LED D3 (cool: blue-purple)
-  43690,  // ToF 6 -> LED D2 (cool: blue)
-  10922   // ToF 7 -> LED D6 (warm: green)
+// Combined configuration for all sensors - channels, LED rings, colors, and descriptions
+// Physical layout:
+// - Side A (D5-D7): Warm/earth tones
+// - Side B (D2-D4): Cool tones
+const SensorConfig sensorConfigs[MAX_SENSORS] = {
+    {0, &sensorRingB3, 5461,  "D7", "ToF 0 -> LED D7 (warm: yellow-orange)"},
+    {1, nullptr,       0,     "",   "ToF 1 (not used)"},
+    {2, nullptr,       0,     "",   "ToF 2 (not used)"},
+    {3, &sensorRingB1, 0,     "D5", "ToF 3 -> LED D5 (warm: red)"}, 
+    {4, &sensorRingA3, 54613, "D4", "ToF 4 -> LED D4 (cool: magenta)"},
+    {5, &sensorRingA2, 49151, "D3", "ToF 5 -> LED D3 (cool: blue-purple)"},
+    {6, &sensorRingA1, 43690, "D2", "ToF 6 -> LED D2 (cool: blue)"},
+    {7, &sensorRingB2, 10922, "D6", "ToF 7 -> LED D6 (warm: green)"}
 };
 
 // Helper function to select Mux channel/port
@@ -249,7 +244,7 @@ void setup() {
   Serial1.println("\nAttempting to set unique I2C addresses...");
 
   for (int i = 0; i < NUM_CHANNELS_TO_CHECK; i++) {
-    uint8_t channel = sensorChannels[i];
+    uint8_t channel = sensorConfigs[i].channel;
 
     if (channel >= MAX_SENSORS) {
         Serial.print("Error: Channel index "); Serial.print(channel);
@@ -435,19 +430,19 @@ void loop() {
         updateSensorAnimation(i, avgDistance);
         
         // Check if we have a paired LED ring for this sensor
-        if (i < 6 && sensorRings[i] != nullptr) {
+        if (i < 6 && sensorConfigs[i].ledRing != nullptr) {
           // Mark that we've handled animation for this ring
           ringAnimated[i] = true;
           
           // Apply active wave animation or idle breathing based on sensor state
           if (isActive[i]) {
-            waveAnimation(*sensorRings[i], ringColors[i], 255, animationPhase[i], animationSpeed[i]);
+            waveAnimation(*sensorConfigs[i].ledRing, sensorConfigs[i].color, 255, animationPhase[i], animationSpeed[i]);
           } else {
-            breatheAnimationHSV(*sensorRings[i], ringColors[i], 255);
+            breatheAnimationHSV(*sensorConfigs[i].ledRing, sensorConfigs[i].color, 255);
           }
           
           // Update the LED ring immediately
-          sensorRings[i]->show();
+          sensorConfigs[i].ledRing->show();
         }
       }
     }
@@ -455,9 +450,9 @@ void loop() {
   
   // For any rings not updated by an active sensor, show breathing animation
   for (int i = 0; i < 6; i++) { // We only have 6 actual LED rings
-    if (!ringAnimated[i] && sensorRings[i] != nullptr) {
-      breatheAnimationHSV(*sensorRings[i], ringColors[i], 255);
-      sensorRings[i]->show();
+    if (!ringAnimated[i] && sensorConfigs[i].ledRing != nullptr) {
+      breatheAnimationHSV(*sensorConfigs[i].ledRing, sensorConfigs[i].color, 255);
+      sensorConfigs[i].ledRing->show();
     }
   }
   
